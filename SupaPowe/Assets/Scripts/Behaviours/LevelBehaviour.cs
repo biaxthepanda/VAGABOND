@@ -22,12 +22,12 @@ public class LevelBehaviour : StaticInstance<LevelBehaviour>
     public float SlowMotionDistance => _slowMotionDistance;
 
     [SerializeField]
-    private float _maxDistance = 5f;
-    public float MaxDistance => _maxDistance;
+    private float maxDrawDrawDistance = 5f;
+    public float MaxDrawDistance => maxDrawDrawDistance;
 
     [SerializeField]
-    private int _maxDrawing = 5;
-    public int MaxDrawing => _maxDrawing;
+    private int _maxDrawCount = 5;
+    public int MaxDrawCount => _maxDrawCount;
 
     [SerializeField]
     private EnemyController _enemyController;

@@ -91,8 +91,8 @@ public class LineManager : MonoBehaviour
 
     void CreateLine()
     {
-        maxDistance = LevelBehaviour.Instance.MaxDistance;
-        maxDrawing = LevelBehaviour.Instance.MaxDrawing;
+        maxDistance = LevelBehaviour.Instance.MaxDrawDistance;
+        maxDrawing = LevelBehaviour.Instance.MaxDrawCount;
         
         if (drawnLine > maxDrawing) return;
         
