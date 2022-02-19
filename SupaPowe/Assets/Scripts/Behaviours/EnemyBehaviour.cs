@@ -49,9 +49,12 @@ public class EnemyBehaviour : MonoBehaviour
         return (transform.position - _player.position).normalized;
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    protected virtual void OnTriggerEnter2D(Collider2D col)
     {
+        if (_isDead) return;
         if (!col.CompareTag("Cut")) return;
+
+        _isDead = true;
 
         transform.DOKill();
         
