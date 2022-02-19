@@ -12,7 +12,7 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private GameObject _inGameCanvas;
     
-    void Start()
+    void Awake()
     {
         if (_mainMenuCanvas == null)
             _mainMenuCanvas = GameObject.Find("MainMenuCanvas");
