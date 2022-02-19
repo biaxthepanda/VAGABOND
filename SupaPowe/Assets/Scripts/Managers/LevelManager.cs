@@ -16,6 +16,8 @@ public class LevelManager : Singleton<LevelManager>
     private GameObject _activeLevel;
 
     public int CurrentLevel => _currentLevel;
+    public float slowTimeMultiplier, lineLengthMultiplier;
+    public int bonusLine;
 
     private void OnEnable()
     {
