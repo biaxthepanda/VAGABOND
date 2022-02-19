@@ -43,11 +43,24 @@ public class TutorialLevelController : Singleton<TutorialLevelController>
     private void NewLevel(GameManager.GameState state)
     {
         if (state != GameManager.GameState.Defending) return;
+        if (!IsTutorialLevel(LevelManager.Instance.CurrentLevel)) return;
         
         // EnemyController isTutorial = true
+            
         StopAllCoroutines();
 
         StartCoroutine(TutorialStart(_levelData[_currentLevel]));
+    }
+
+    private bool IsTutorialLevel(int level)
+    {
+        foreach (var levelData in _levelData)
+        {
+            if (levelData.levelID == level)
+                return true;
+        }
+
+        return false;
     }
 
     IEnumerator TutorialStart(LevelData levelData)
