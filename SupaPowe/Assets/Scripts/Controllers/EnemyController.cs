@@ -18,8 +18,9 @@ public class EnemyController : MonoBehaviour
 
         var levelBehaviour = LevelBehaviour.Instance;
         var comeDuration = levelBehaviour.EnemyComeDuration;
-        var slowMotionDuration = levelBehaviour.SlowMotionDistance;
-        var minDistance = levelBehaviour.SlowMotionDuration;
+        var slowMotionDuration = levelBehaviour.SlowMotionDuration;
+        var slowStartDistance = levelBehaviour.SlowMotionStartDistance;
+        var slowEndDistance = levelBehaviour.SlowMotionEndDistance;
             
         foreach (var enemy in _enemyBehaviours)
         {
@@ -28,7 +29,7 @@ public class EnemyController : MonoBehaviour
             //     rangedEnemy.Initialize(_player);
             // }
 
-            enemy.Initialize(_player, comeDuration, slowMotionDuration, minDistance);
+            enemy.Initialize(_player, comeDuration, slowMotionDuration, slowStartDistance);
         }
 
         DOVirtual.DelayedCall(comeDuration + 0.1f, (() =>

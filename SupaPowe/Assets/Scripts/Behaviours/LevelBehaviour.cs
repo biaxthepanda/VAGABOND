@@ -18,8 +18,12 @@ public class LevelBehaviour : StaticInstance<LevelBehaviour>
     public float SlowMotionDuration => _slowMotionDuration;
     
     [SerializeField]
-    private float _slowMotionDistance = 7f;
-    public float SlowMotionDistance => _slowMotionDistance;
+    private float _slowMotionStartDistance = 7f;
+    public float SlowMotionStartDistance => _slowMotionStartDistance;
+    
+    [SerializeField]
+    private float _slowMotionEndDistance = 7f;
+    public float SlowMotionEndDistance => _slowMotionEndDistance;
 
     [SerializeField]
     private float maxDrawDrawDistance = 5f;
