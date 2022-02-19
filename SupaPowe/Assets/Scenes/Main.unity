@@ -671,6 +671,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8384263233477343949, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: maxDrawing
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384263233477343949, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: minDistance
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 8384263234165426315, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
       propertyPath: m_Name
       value: Managers
