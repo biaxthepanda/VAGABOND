@@ -66,14 +66,15 @@ public class Drawing : MonoBehaviour
             mesh.uv = uv;
             mesh.triangles = triangles;
             mesh.MarkDynamic();
-            
+
+            distanceTraveled = 0;
             GetComponent<MeshFilter>().mesh = mesh;
             }
 
 
 
 
-
+            lastMousePos = mousePos();
 
 
         }
@@ -126,9 +127,11 @@ public class Drawing : MonoBehaviour
             mesh.triangles = triangles;
             mesh.uv = uv;
 
+            
             distanceTraveled += Vector3.Distance(mousePos(), lastMousePos);
+            
 
-            lastMousePos = mousePos();
+                lastMousePos = mousePos();
 
             //Debug UpDown
             debug1.position = newVertexUp;
