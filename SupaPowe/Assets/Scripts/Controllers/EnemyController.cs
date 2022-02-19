@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -13,7 +14,12 @@ public class EnemyController : MonoBehaviour
     public void Attack()
     {
         if (_player == null)
-            
+            _player = GameObject.FindWithTag("Player").transform;
+
+        var levelBehaviour = LevelBehaviour.Instance;
+        var comeDuration = levelBehaviour.EnemyComeDuration;
+        var slowMotionDuration = levelBehaviour.SlowMotionDistance;
+        var minDistance = levelBehaviour.SlowMotionDuration;
             
         foreach (var enemy in _enemyBehaviours)
         {
@@ -22,7 +28,12 @@ public class EnemyController : MonoBehaviour
             //     rangedEnemy.Initialize(_player);
             // }
 
-            enemy.Initialize(_player);
+            enemy.Initialize(_player, comeDuration, slowMotionDuration, minDistance);
         }
+
+        DOVirtual.DelayedCall(comeDuration + 0.1f, (() =>
+        {
+            GameManager.Instance.ChangeState(GameManager.GameState.Attacking);
+        }));
     }
 }

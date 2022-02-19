@@ -4,9 +4,9 @@ using UnityEngine;
 public class RangedEnemyBehaviour : EnemyBehaviour
 {
 
-    public override void Initialize(Transform player, float comeDuration = 2f, float slowMotionDuration = 10f, float minDistance = 1f)
+    public override void Initialize(Transform player, float comeDuration = 2f, float slowMotionDuration = 10f, float slowMotionStartDistance = 1f)
     {
-        base.Initialize(player, comeDuration, slowMotionDuration, minDistance);
+        base.Initialize(player, comeDuration, slowMotionDuration, slowMotionStartDistance);
         
         ThrowShuriken();
     }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class LineManager : MonoBehaviour
@@ -90,6 +91,9 @@ public class LineManager : MonoBehaviour
 
     void CreateLine()
     {
+        maxDistance = LevelBehaviour.Instance.MaxDistance;
+        maxDrawing = LevelBehaviour.Instance.MaxDrawing;
+        
         if (drawnLine > maxDrawing) return;
         
         isDrawing = true;
