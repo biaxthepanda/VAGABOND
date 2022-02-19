@@ -24,9 +24,12 @@ public class LineManager : MonoBehaviour
 
     public bool isDrawing;
 
+    private Camera mainCam;
+
     private void Start()
     {
-        
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        Debug.Log(mainCam.name);
     }
 
     private void Update()
@@ -42,7 +45,7 @@ public class LineManager : MonoBehaviour
         {
             if(distanceTraveled < maxDistance && drawnLine < maxDrawing) 
             {
-            Vector2 tempFingerPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 tempFingerPos = mainCam.ScreenToWorldPoint(Input.mousePosition);
             if (Vector2.Distance(tempFingerPos,fingerPositions[fingerPositions.Count -1]) > minDistance)
             {
                 distanceTraveled += Vector2.Distance(tempFingerPos, fingerPositions[fingerPositions.Count - 1]);
@@ -75,8 +78,8 @@ public class LineManager : MonoBehaviour
             lineRenderer = currentLine.GetComponent<LineRenderer>();
             edgeCollider = currentLine.GetComponent<EdgeCollider2D>();
             fingerPositions.Clear();
-            fingerPositions.Add(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            fingerPositions.Add(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            fingerPositions.Add(mainCam.ScreenToWorldPoint(Input.mousePosition));
+            fingerPositions.Add(mainCam.ScreenToWorldPoint(Input.mousePosition));
             lineRenderer.SetPosition(0, fingerPositions[0]);
             lineRenderer.SetPosition(1, fingerPositions[1]);
             edgeCollider.points = fingerPositions.ToArray();

@@ -48,4 +48,9 @@ MonoBehaviour:
   lineRenderer: {fileID: 0}
   edgeCollider: {fileID: 0}
   fingerPositions: []
-  minDistance: 0.5
+  minDistance: 0.05
+  maxDistance: 5
+  distanceTraveled: 0
+  maxDrawing: 3
+  drawnLine: 0
+  isDrawing: 0
