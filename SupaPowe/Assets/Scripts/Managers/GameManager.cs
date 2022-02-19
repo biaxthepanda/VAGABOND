@@ -42,6 +42,35 @@ public class GameManager : Singleton<GameManager>
         Debug.Log($"New State: {newState}");
     }
 
+    private void Menu()
+    {
+        
+    }
+    private void Idle()
+    {
+        
+    }
+    private void Defending()
+    {
+        
+    }
+    private void Attacking()
+    {
+        
+    }
+    private void Act()
+    {
+        
+    }
+    private void Win()
+    {
+        
+    }
+    private void Lose()
+    {
+        
+    }
+
 
     [Serializable]
     public enum GameState
