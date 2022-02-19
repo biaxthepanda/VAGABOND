@@ -71,9 +71,6 @@ public class Drawing : MonoBehaviour
             GetComponent<MeshFilter>().mesh = mesh;
             }
 
-
-
-
             lastMousePos = mousePos();
 
 
@@ -153,7 +150,6 @@ public class Drawing : MonoBehaviour
                 drawnLine++; //Burda bug çýkabilir
                 isDrawing = false;
                 distanceTraveled = 0f;
-
             }
 
 
