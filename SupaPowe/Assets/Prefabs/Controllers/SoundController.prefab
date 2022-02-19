@@ -491,6 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musics:
   - {fileID: 8300000, guid: 3cd359ef3c5f9c14f97372caca46acf3, type: 3}
+  - {fileID: 8300000, guid: 3cd359ef3c5f9c14f97372caca46acf3, type: 3}
   _musicPlayer:
   - {fileID: 1192897912681939919}
   - {fileID: 1960339538795959635}
