@@ -22,7 +22,7 @@ public class GameManager : Singleton<GameManager>
             _uiController = GameObject.Find("UIController").GetComponent<UIController>();
         
         if (_cameraController == null)
-            _cameraController = GameObject.Find("UIController").GetComponent<CameraController>();
+            _cameraController = GameObject.Find("CameraController").GetComponent<CameraController>();
         
         
         ChangeState(GameState.Menu);
