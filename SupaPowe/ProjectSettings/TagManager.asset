@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Cut
+  - Boss
   layers:
   - Default
   - TransparentFX
