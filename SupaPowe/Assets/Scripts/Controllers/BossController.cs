@@ -16,6 +16,9 @@ public class BossController : MonoBehaviour
 
     private bool _isDefendWaiting;
     private bool _isAttackWaiting;
+
+    int defendPosition = 0;
+    int attackPosition = 0;
     public BossState BState { get; private set; }
 
     
@@ -47,6 +50,7 @@ public class BossController : MonoBehaviour
             if(_timer >= prepareAttackDuration)
             {
                 ChangeBossState(BossState.Attack);
+                Attack(3);
                 _timer = 0;
             }
         }
@@ -73,21 +77,27 @@ public class BossController : MonoBehaviour
         switch (newState)
         {
             case BossState.PrepareAttack:
+                AttackPrepare();
+                GameManager.Instance.ChangeState(GameManager.GameState.Defending);
                 _isAttackWaiting = true;
+                
                 break;
 
             case BossState.Attack:
-                Attack();
+                
                 _isAttackWaiting = false;
+                ChangeBossState(BossState.PrepareDefend);
                 break;
 
             case BossState.PrepareDefend:
                 Defend();
+                GameManager.Instance.ChangeState(GameManager.GameState.Attacking);
                 _isDefendWaiting = true;
                 break;
 
             case BossState.Defend:
                 _isDefendWaiting = false;
+                ChangeBossState(BossState.PrepareAttack);
                 break;
         }
 
@@ -95,17 +105,33 @@ public class BossController : MonoBehaviour
 
     public void Defend()
     {
-        //Defend animation is gonna play 
-        int swordPlace = (int)Random.Range(0, 3);
-
+        //Defend animation is gonna play , player will see where the boss will be blocking
+        defendPosition = (int)Random.Range(0, 3);
+        
     }
+
+    public void Block(int pos)
+    {
+        if(pos == defendPosition)
+        {
+            //Boss blocked the player
+            ChangeBossState(BossState.Defend);
+        }
+        else
+        {
+            //Boss get damage
+            GetDamage(25);
+            ChangeBossState(BossState.Defend);
+        }
+    }
+    
 
     public void GetDamage(float damage)
     {
         health -= damage;
         if (health <= 0)
             Die();
-        ChangeBossState(BossState.PrepareDefend);
+        ChangeBossState(BossState.Defend);
     }
 
     public void Die()
@@ -115,9 +141,13 @@ public class BossController : MonoBehaviour
     }
 
 
-    public void Attack()
+    public void AttackPrepare()
     {
-        int swordPlace = (int)(Random.Range(0, 3));
+        attackPosition = (int)(Random.Range(0, 3));
+
+        //Attack animation is gonna play , player will see where the boss will be attacking
+        
+        /*
         RaycastHit2D hit = Physics2D.Raycast(transform.position,Vector2.left,Mathf.Infinity,pwLayerMask);
         if (hit)
         {
@@ -132,7 +162,22 @@ public class BossController : MonoBehaviour
 
             }
         }
-        
-
+        */
     }
+
+    public void Attack(int pos)
+    {
+        if(attackPosition == pos)
+        {
+            //Player Blocked The Boss Attack
+            ChangeBossState(BossState.Attack);
+        }
+        else
+        {
+            //Player Couldn't Block The Boss Attack, Level Restart
+        }
+    }
+
+
+
 }

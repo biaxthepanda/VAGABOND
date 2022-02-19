@@ -29,6 +29,9 @@ public class LineManager : MonoBehaviour
     private Camera mainCam;
 
     private bool _isActive = false;
+
+    Vector2 firstPos;
+
     
     private void OnEnable()
     {
@@ -80,6 +83,7 @@ public class LineManager : MonoBehaviour
         {
             if (isDrawing)
             {
+                BossInteraction();
                 isDrawing = false;
                 drawnLine++;
                 distanceTraveled = 0;
@@ -96,6 +100,7 @@ public class LineManager : MonoBehaviour
         
         if (drawnLine > maxDrawing) return;
         
+        
         isDrawing = true;
         currentLine = Instantiate(linePrefab, Vector3.zero, Quaternion.identity);
         lineRenderer = currentLine.GetComponent<LineRenderer>();
@@ -103,6 +108,7 @@ public class LineManager : MonoBehaviour
         fingerPositions.Clear();
         fingerPositions.Add(mainCam.ScreenToWorldPoint(Input.mousePosition));
         fingerPositions.Add(mainCam.ScreenToWorldPoint(Input.mousePosition));
+        firstPos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         lineRenderer.SetPosition(0, fingerPositions[0]);
         lineRenderer.SetPosition(1, fingerPositions[1]);
         edgeCollider.points = fingerPositions.ToArray();
@@ -121,7 +127,46 @@ public class LineManager : MonoBehaviour
 
     }
 
-
+    public void BossInteraction()
+    {
+        if (GameObject.FindGameObjectWithTag("Boss") != null)
+        {
+            BossController bossScript;
+            bossScript = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossController>();
+            float xDistance = firstPos.x - mainCam.ScreenToWorldPoint(Input.mousePosition).x;
+            float yDistance = firstPos.x - mainCam.ScreenToWorldPoint(Input.mousePosition).x;
+            if(bossScript.BState == BossController.BossState.PrepareDefend)
+            {
+                if (Mathf.Abs(xDistance) > Mathf.Abs(yDistance))
+                {
+                    bossScript.Block(2);
+                }
+                else if (yDistance > 0)
+                {
+                    bossScript.Block(1);
+                }
+                else if (yDistance <= 0)
+                {
+                    bossScript.Block(0);
+                }
+            }else if (bossScript.BState == BossController.BossState.PrepareAttack)
+            {
+                if (Mathf.Abs(xDistance) > Mathf.Abs(yDistance))
+                {
+                    bossScript.Attack(2);
+                }
+                else if (yDistance > 0)
+                {
+                    bossScript.Attack(1);
+                }
+                else if (yDistance <= 0)
+                {
+                    bossScript.Attack(0);
+                }
+            }
+            
+        }
+    }
 
 
 
