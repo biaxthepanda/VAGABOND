@@ -18,6 +18,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject _bloodParticle;
 
+    protected bool _isDead = false;
+
     protected Transform _player;
 
     public virtual void Initialize(Transform player, float comeDuration = 2f, float slowMotionDuration = 10f, float slowMotionStartDistance = 7f, float slowMotionEndDistance = 6f)

@@ -12,13 +12,14 @@ public class RangedEnemyBehaviour : EnemyBehaviour
     {
         base.Initialize(player, comeDuration, slowMotionDuration, slowMotionStartDistance + 1f);
         
-        DOVirtual.DelayedCall(comeDuration + 1f, () => ThrowShuriken());
+        DOVirtual.DelayedCall(comeDuration + 0.2f, () => ThrowShuriken());
     }
 
     private void ThrowShuriken()
     {
         // Instantiate shuriken towards the player
         var dir = GetPlayerDir();
-        _spriteRenderer.sprite = _enemyEmptyHandSprites[_selectedSprite];
+        if (!_isDead) 
+            _spriteRenderer.sprite = _enemyEmptyHandSprites[_selectedSprite];
     }
 }
