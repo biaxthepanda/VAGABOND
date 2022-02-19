@@ -14,10 +14,11 @@ public class GameManager : Singleton<GameManager>
     
     void Start()
     {
-        ChangeState(GameState.Menu);
-
         if (_uiController == null)
             _uiController = GameObject.Find("UIController").GetComponent<UIController>();
+        
+        
+        ChangeState(GameState.Menu);
     }
     
     public void ChangeState(GameState newState)
