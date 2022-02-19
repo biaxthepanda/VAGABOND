@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour
     {
         Vector3 target = Vector3.zero;
 
-        var duration = moveDuration.Equals(-1f) ? 0 : _lerpDuration;
+        var duration = moveDuration.Equals(-1f) ? _lerpDuration : moveDuration;
 
         if (camPos == CamPosition.MenuPosition)
             target = new Vector3(menuPosition.position.x, menuPosition.position.y, _mainCamera.transform.position.z);

@@ -15,6 +15,8 @@ public class GameManager : Singleton<GameManager>
     private UIController _uiController;
     [SerializeField]
     private CameraController _cameraController;
+
+    private bool _isStarted = false;
     
     void Start()
     {
@@ -62,7 +64,10 @@ public class GameManager : Singleton<GameManager>
     {
         _uiController.ChangeCanvasView(UIController.CurrentUI.MainMenu);
         SoundController.Instance.PlayMusic(SoundController.Musics.Menu);
-        _cameraController.SwitchCamera(CameraController.CamPosition.MenuPosition);
+        var moveDuration = _isStarted ? -1 : 0;
+        if(!_isStarted)
+            _isStarted = true;
+        _cameraController.SwitchCamera(CameraController.CamPosition.MenuPosition, 0f);
     }
     private void Idle()
     {
