@@ -8,10 +8,16 @@ public class GameManager : Singleton<GameManager>
     public static event Action<GameState> OnGameStateChanged;
 
     public GameState State { get; private set; }
+
+    [SerializeField]
+    private UIController _uiController;
     
     void Start()
     {
         ChangeState(GameState.Menu);
+
+        if (_uiController == null)
+            _uiController = GameObject.Find("UIController").GetComponent<UIController>();
     }
     
     public void ChangeState(GameState newState)
@@ -21,8 +27,10 @@ public class GameManager : Singleton<GameManager>
         switch (newState)
         {
             case GameState.Menu:
+                Menu();
                 break;
             case GameState.Idle:
+                Idle();
                 break;
             case GameState.Defending:
                 break;
@@ -44,11 +52,12 @@ public class GameManager : Singleton<GameManager>
 
     private void Menu()
     {
+        _uiController.ChangeCanvasView(UIController.CurrentUI.MainMenu);
         SoundController.Instance.PlayMusic(SoundController.Musics.Menu);
     }
     private void Idle()
     {
-        
+        SoundController.Instance.PlayMusic(SoundController.Musics.GameLoop);
     }
     private void Defending()
     {
@@ -56,7 +65,7 @@ public class GameManager : Singleton<GameManager>
     }
     private void Attacking()
     {
-        
+        _uiController.ChangeCanvasView(UIController.CurrentUI.InGame);
     }
     private void Act()
     {
