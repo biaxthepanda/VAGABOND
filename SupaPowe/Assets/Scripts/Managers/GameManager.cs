@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
@@ -11,11 +12,16 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField]
     private UIController _uiController;
+    [SerializeField]
+    private CameraController _cameraController;
     
     void Start()
     {
         if (_uiController == null)
             _uiController = GameObject.Find("UIController").GetComponent<UIController>();
+        
+        if (_cameraController == null)
+            _cameraController = GameObject.Find("UIController").GetComponent<CameraController>();
         
         
         ChangeState(GameState.Menu);
@@ -55,10 +61,13 @@ public class GameManager : Singleton<GameManager>
     {
         _uiController.ChangeCanvasView(UIController.CurrentUI.MainMenu);
         SoundController.Instance.PlayMusic(SoundController.Musics.Menu);
+        _cameraController.SwitchCamera(CameraController.CamPosition.MenuPosition);
     }
     private void Idle()
     {
+        _uiController.DeactivateAll();
         SoundController.Instance.PlayMusic(SoundController.Musics.GameLoop);
+        _cameraController.SwitchCamera(CameraController.CamPosition.GamePosition);
     }
     private void Defending()
     {

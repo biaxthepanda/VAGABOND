@@ -34,14 +34,10 @@ public class UIController : MonoBehaviour
         {
             _inGameCanvas.SetActive(true);
         }
-        else
-        {
-            Debug.Log("UI not affected.");
-        }
 
     }
 
-    private void DeactivateAll()
+    public void DeactivateAll()
     {
         _mainMenuCanvas.SetActive(false);
         _inGameCanvas.SetActive(false);
