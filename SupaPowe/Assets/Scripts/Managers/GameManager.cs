@@ -44,7 +44,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Menu()
     {
-        
+        SoundController.Instance.PlayMusic(SoundController.Musics.Menu);
     }
     private void Idle()
     {
@@ -52,7 +52,7 @@ public class GameManager : Singleton<GameManager>
     }
     private void Defending()
     {
-        
+        //EnemyController.Initialize();
     }
     private void Attacking()
     {
