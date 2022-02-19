@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5122335064931252762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.6466277, y: 0.6730132, z: -18.020285}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5122335065997166016}
   - {fileID: 4000714577168685431}
@@ -51,6 +51,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f9b006a20b2c0514dabe82c62f6d9a7a, type: 3}
   _enemyDeadSprites: []
   _spriteRenderer: {fileID: 5122335065997166023}
+  _bloodParticle: {fileID: 4000714577168685434}
 --- !u!50 &5122335064931252763
 Rigidbody2D:
   serializedVersion: 4
@@ -241,6 +242,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08eb59c3dd51dba4b889920ed2629963, type: 3}
+--- !u!1 &4000714577168685434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5993349224376289177, guid: 08eb59c3dd51dba4b889920ed2629963, type: 3}
+  m_PrefabInstance: {fileID: 7253544091593613027}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4000714577168685431 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5993349224376289172, guid: 08eb59c3dd51dba4b889920ed2629963, type: 3}

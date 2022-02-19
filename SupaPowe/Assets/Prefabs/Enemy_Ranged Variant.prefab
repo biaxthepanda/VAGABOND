@@ -25,6 +25,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fc4bf2ff6d41cfa45933cff0d4414a2b, type: 3}
   - {fileID: 21300000, guid: 65c293b5f65d21f4f9bd60d8fe051c23, type: 3}
   _spriteRenderer: {fileID: 1775793307941122359}
+  _bloodParticle: {fileID: 7509671799094553994}
   _enemyEmptyHandSprites:
   - {fileID: 21300000, guid: 9cba3e2aca81d3543846114bd55aa66e, type: 3}
   - {fileID: 21300000, guid: 355a715261d9e484095cabe2d07beece, type: 3}
@@ -125,5 +126,10 @@ GameObject:
 --- !u!212 &1775793307941122359 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5770189243136361945, guid: 0e5feb452ac4d3f468b5df85fc251e46, type: 3}
+  m_PrefabInstance: {fileID: 5239716140689978606}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7509671799094553994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2342013261072324964, guid: 0e5feb452ac4d3f468b5df85fc251e46, type: 3}
   m_PrefabInstance: {fileID: 5239716140689978606}
   m_PrefabAsset: {fileID: 0}
