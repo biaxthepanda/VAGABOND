@@ -32,7 +32,7 @@ public class LineManager : MonoBehaviour
 
     Vector2 firstPos;
 
-    
+    /*
     private void OnEnable()
     {
         GameManager.OnGameStateChanged += Activate;
@@ -47,7 +47,7 @@ public class LineManager : MonoBehaviour
     {
         _isActive = state == GameManager.GameState.Attacking;
     }
-
+    */
     private void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -56,7 +56,7 @@ public class LineManager : MonoBehaviour
 
     private void Update()
     {
-        if (!_isActive) return;
+        //if (!_isActive) return;
         if (Input.GetMouseButtonDown(0))
         {
 
@@ -95,8 +95,8 @@ public class LineManager : MonoBehaviour
 
     void CreateLine()
     {
-        maxDistance = LevelBehaviour.Instance.MaxDrawDistance;
-        maxDrawing = LevelBehaviour.Instance.MaxDrawCount;
+        //maxDistance = LevelBehaviour.Instance.MaxDrawDistance;
+        //maxDrawing = LevelBehaviour.Instance.MaxDrawCount;
         
         if (drawnLine > maxDrawing) return;
         
@@ -113,7 +113,7 @@ public class LineManager : MonoBehaviour
         lineRenderer.SetPosition(1, fingerPositions[1]);
         edgeCollider.points = fingerPositions.ToArray();
         
-        OnLineStarted?.Invoke();
+        //OnLineStarted?.Invoke();
         
     }
 
@@ -134,7 +134,8 @@ public class LineManager : MonoBehaviour
             BossController bossScript;
             bossScript = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossController>();
             float xDistance = firstPos.x - mainCam.ScreenToWorldPoint(Input.mousePosition).x;
-            float yDistance = firstPos.x - mainCam.ScreenToWorldPoint(Input.mousePosition).x;
+            float yDistance = firstPos.y - mainCam.ScreenToWorldPoint(Input.mousePosition).y;
+            Debug.Log("x:" + xDistance + " y:" + yDistance);
             if(bossScript.BState == BossController.BossState.PrepareDefend)
             {
                 if (Mathf.Abs(xDistance) > Mathf.Abs(yDistance))
