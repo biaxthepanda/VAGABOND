@@ -15,6 +15,9 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     protected SpriteRenderer _spriteRenderer;
 
+    [SerializeField]
+    private GameObject _bloodParticle;
+
     protected Transform _player;
 
     public virtual void Initialize(Transform player, float comeDuration = 2f, float slowMotionDuration = 10f, float slowMotionStartDistance = 7f, float slowMotionEndDistance = 6f)
@@ -56,7 +59,7 @@ public class EnemyBehaviour : MonoBehaviour
         transform.DOMove(movePos, 5f).SetEase(Ease.OutSine);
         
         // cutting animation
-        // blood particles
-        // cutting sprite
+        _bloodParticle.SetActive(true);
+        _spriteRenderer.sprite = _enemyDeadSprites[_selectedSprite];
     }
 }
