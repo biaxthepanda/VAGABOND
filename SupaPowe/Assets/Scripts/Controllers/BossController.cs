@@ -77,11 +77,13 @@ public class BossController : MonoBehaviour
                 break;
 
             case BossState.Attack:
+                Attack();
                 _isAttackWaiting = false;
                 break;
 
             case BossState.PrepareDefend:
-                _isAttackWaiting = true;
+                Defend();
+                _isDefendWaiting = true;
                 break;
 
             case BossState.Defend:
@@ -91,11 +93,25 @@ public class BossController : MonoBehaviour
 
     }
 
+    public void Defend()
+    {
+        //Defend animation is gonna play 
+        int swordPlace = (int)Random.Range(0, 3);
+
+    }
 
     public void GetDamage(float damage)
     {
         health -= damage;
+        if (health <= 0)
+            Die();
         ChangeBossState(BossState.PrepareDefend);
+    }
+
+    public void Die()
+    {
+        //Death
+        Debug.Log("Boss is dead");
     }
 
 
