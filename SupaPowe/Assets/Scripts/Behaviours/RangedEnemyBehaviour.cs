@@ -4,7 +4,7 @@ using UnityEngine;
 public class RangedEnemyBehaviour : EnemyBehaviour
 {
 
-    public void Initialize(Transform player, float comeDuration = 2f, float slowMotionDuration = 10f, float minDistance = 1f)
+    public override void Initialize(Transform player, float comeDuration = 2f, float slowMotionDuration = 10f, float minDistance = 1f)
     {
         base.Initialize(player, comeDuration, slowMotionDuration, minDistance);
         
