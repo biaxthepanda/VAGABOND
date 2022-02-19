@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LineManager : MonoBehaviour
 {
-
+    public static Action OnLineStarted;
 
 
     public GameObject linePrefab;
@@ -26,6 +27,23 @@ public class LineManager : MonoBehaviour
 
     private Camera mainCam;
 
+    private bool _isActive = false;
+    
+    private void OnEnable()
+    {
+        GameManager.OnGameStateChanged += Activate;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameStateChanged -= Activate;
+    }
+
+    private void Activate(GameManager.GameState state)
+    {
+        _isActive = state == GameManager.GameState.Attacking;
+    }
+
     private void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -34,6 +52,7 @@ public class LineManager : MonoBehaviour
 
     private void Update()
     {
+        if (!_isActive) return;
         if (Input.GetMouseButtonDown(0))
         {
 
