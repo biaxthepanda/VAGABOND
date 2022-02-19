@@ -90,19 +90,20 @@ public class LineManager : MonoBehaviour
 
     void CreateLine()
     {
-        if(drawnLine < maxDrawing)
-        {
-            isDrawing = true;
-            currentLine = Instantiate(linePrefab, Vector3.zero, Quaternion.identity);
-            lineRenderer = currentLine.GetComponent<LineRenderer>();
-            edgeCollider = currentLine.GetComponent<EdgeCollider2D>();
-            fingerPositions.Clear();
-            fingerPositions.Add(mainCam.ScreenToWorldPoint(Input.mousePosition));
-            fingerPositions.Add(mainCam.ScreenToWorldPoint(Input.mousePosition));
-            lineRenderer.SetPosition(0, fingerPositions[0]);
-            lineRenderer.SetPosition(1, fingerPositions[1]);
-            edgeCollider.points = fingerPositions.ToArray();
-        }
+        if (drawnLine > maxDrawing) return;
+        
+        isDrawing = true;
+        currentLine = Instantiate(linePrefab, Vector3.zero, Quaternion.identity);
+        lineRenderer = currentLine.GetComponent<LineRenderer>();
+        edgeCollider = currentLine.GetComponent<EdgeCollider2D>();
+        fingerPositions.Clear();
+        fingerPositions.Add(mainCam.ScreenToWorldPoint(Input.mousePosition));
+        fingerPositions.Add(mainCam.ScreenToWorldPoint(Input.mousePosition));
+        lineRenderer.SetPosition(0, fingerPositions[0]);
+        lineRenderer.SetPosition(1, fingerPositions[1]);
+        edgeCollider.points = fingerPositions.ToArray();
+        
+        OnLineStarted?.Invoke();
         
     }
 
