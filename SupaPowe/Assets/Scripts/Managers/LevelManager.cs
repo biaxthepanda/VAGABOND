@@ -31,7 +31,7 @@ public class LevelManager : Singleton<LevelManager>
     {
         if (state == GameManager.GameState.Idle)
         {
-            _activeLevel = Instantiate(_levels[CurrentLevel], _levelParent);
+            DOVirtual.DelayedCall(1f, () => _activeLevel = Instantiate(_levels[CurrentLevel], _levelParent));
 
             return;
         } 

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using DG.Tweening;
 using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
@@ -68,6 +69,7 @@ public class GameManager : Singleton<GameManager>
         _uiController.DeactivateAll();
         SoundController.Instance.PlayMusic(SoundController.Musics.GameLoop);
         _cameraController.SwitchCamera(CameraController.CamPosition.GamePosition);
+        
     }
     private void Defending()
     {

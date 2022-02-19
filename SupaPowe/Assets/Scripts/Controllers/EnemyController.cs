@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private List<EnemyBehaviour> _enemyBehaviours;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    private Transform _player;
+
+    public void Attack()
     {
-        
+        if (_player == null)
+            
+            
+        foreach (var enemy in _enemyBehaviours)
+        {
+            // if (enemy.TryGetComponent(out RangedEnemyBehaviour rangedEnemy))
+            // {
+            //     rangedEnemy.Initialize(_player);
+            // }
+
+            enemy.Initialize(_player);
+        }
     }
 }

@@ -43,6 +43,15 @@ public class UIController : MonoBehaviour
         _inGameCanvas.SetActive(false);
     }
 
+    public void Play()
+    {
+        GameManager.Instance.ChangeState(GameManager.GameState.Idle);
+    }
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
     [Serializable]
     public enum CurrentUI
     {

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public abstract class EnemyBehaviour : MonoBehaviour
+public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField]
     protected List<Sprite> _enemySprites = new List<Sprite>();
