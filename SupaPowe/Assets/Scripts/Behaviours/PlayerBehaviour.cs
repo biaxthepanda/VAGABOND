@@ -39,11 +39,16 @@ public class PlayerBehaviour : MonoBehaviour
         switch (state)
         { 
             case GameManager.GameState.Menu: 
+                IdleAnim();
+                break;
             case GameManager.GameState.Idle:
-                WalkingAnimation();
+                WalkingAnim();
                 break;
             case GameManager.GameState.Attacking:
                 AttackAnim();
+                break;
+            case GameManager.GameState.Defending:
+                IdleAnim();
                 break;
             case GameManager.GameState.Win:
                 AttackDoneAnim();
@@ -74,12 +79,17 @@ public class PlayerBehaviour : MonoBehaviour
             }));
         });
     }
-    private void WalkingAnimation()
+    private void WalkingAnim()
     {
         transform.DOKill();
         transform.position = Vector3.zero;
         _animator.Play("Walk");
         //play at the start of idle scene
+    }
+    
+    private void IdleAnim()
+    {
+        // _animator.Play("Idle");
     }
 
     private void DieAnim()

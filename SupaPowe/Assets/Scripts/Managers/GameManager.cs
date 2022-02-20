@@ -83,7 +83,7 @@ public class GameManager : Singleton<GameManager>
     private void Idle()
     {
         _uiController.ChangeCanvasView(UIController.CurrentUI.Deactivated);
-        SoundController.Instance.PlayMusic(SoundController.Musics.GameLoop);
+        SoundController.Instance.PlayMusic(SoundController.Musics.Idle);
         _cameraController.SwitchCamera(CameraController.CamPosition.GamePosition);
         
     }

@@ -83,8 +83,9 @@ public class SoundController : Singleton<SoundController>
     public enum Musics
     {
         Menu = 0,
-        GameLoop = 1,
-        BossMusic = 2,
+        Idle = 1,
+        GameLoop = 2,
+        BossMusic = 3,
     }
     
     [Serializable]

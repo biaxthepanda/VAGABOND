@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923081316694227583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.09, y: -0.98, z: 0}
+  m_LocalPosition: {x: 2.55, y: -2.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3222190040765635135}
@@ -77,7 +77,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _leftClickPrefab: {fileID: 9178603970113399321, guid: 120f589c016d18144be6ae7b221dbe4a, type: 3}
   _rightClickPrefab: {fileID: 7636917753119944740, guid: 6764689f33ae1dd4685d598674d31129, type: 3}
-  _levelData: []
+  _levelData:
+  - levelID: 0
+    tutorialType: 0
+    tutorialStartLocation: {fileID: 2176059225807157581}
+    tutorialEndLocation: {fileID: 1563527491286824978}
 --- !u!1 &5763456935710606172
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6349794283330197225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.92, y: -1.04, z: 0}
+  m_LocalPosition: {x: 0.62, y: 1.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3222190040765635135}
