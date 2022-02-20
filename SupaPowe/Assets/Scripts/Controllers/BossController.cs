@@ -21,12 +21,19 @@ public class BossController : MonoBehaviour
 
     public bool isDead = false;
 
+    public Sprite[] idleDeath;
+    public Sprite[] spritesDef;
+    public Sprite[] spritesAttack;
+    SpriteRenderer _spriteRenderer;
+
+
     public BossState BState { get; private set; }
 
     
 
     private void Start()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         Transform _player = GameObject.FindWithTag("Player").transform;
 
         Vector3 dir = (transform.position - _player.position).normalized;;
@@ -100,7 +107,7 @@ public class BossController : MonoBehaviour
                 break;
 
             case BossState.Attack:
-                
+                _spriteRenderer.sprite = idleDeath[0];
                 _isAttackWaiting = false;
                 ChangeBossState(BossState.PrepareDefend);
                 _timer = 0;
@@ -114,6 +121,7 @@ public class BossController : MonoBehaviour
                 break;
 
             case BossState.Defend:
+                _spriteRenderer.sprite = idleDeath[0];
                 _isDefendWaiting = false;
                 ChangeBossState(BossState.PrepareAttack);
                 _timer = 0;
@@ -129,6 +137,22 @@ public class BossController : MonoBehaviour
 
         //Defend animation is gonna play , player will see where the boss will be blocking
         defendPosition = (int)Random.Range(0, 3);
+        switch (defendPosition)
+        {
+            case 0:
+                _spriteRenderer.sprite = spritesDef[0];
+                break;
+
+            case 1:
+                _spriteRenderer.sprite = spritesDef[1];
+                break;
+
+            case 2:
+                _spriteRenderer.sprite = spritesDef[2];
+                break;
+
+
+        }
         Debug.Log("DefendPOS = " +defendPosition);
         _timer = 0;
     }
@@ -177,6 +201,7 @@ public class BossController : MonoBehaviour
     {
         //Death
         Debug.Log("Boss is dead");
+        _spriteRenderer.sprite = idleDeath[1];
         isDead = true;
         ChangeBossState(BossState.Dead);
         _timer = 0;
@@ -189,6 +214,23 @@ public class BossController : MonoBehaviour
         Debug.Log("Boss Saldýrmaya Hazýrlanýyor");
 
         attackPosition = (int)(Random.Range(0, 3));
+
+        switch (attackPosition)
+        {
+            case 0:
+                _spriteRenderer.sprite = spritesAttack[0];
+                break;
+
+            case 1:
+                _spriteRenderer.sprite = spritesAttack[1];
+                break;
+
+            case 2:
+                _spriteRenderer.sprite = spritesAttack[2];
+                break;
+
+
+        }
         Debug.Log("AttackPOS = " + attackPosition);
         _timer = 0;
 
