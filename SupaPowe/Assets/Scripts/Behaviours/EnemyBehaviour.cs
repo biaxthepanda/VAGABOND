@@ -19,6 +19,7 @@ public class EnemyBehaviour : MonoBehaviour
     private GameObject _bloodParticle;
 
     protected bool _isDead = false;
+    public bool IsDead => _isDead;
 
     protected Transform _player;
 
@@ -56,15 +57,21 @@ public class EnemyBehaviour : MonoBehaviour
 
         _isDead = true;
 
+        
+        // cutting animation
+    }
+
+    public void CuttingAnimation()
+    {
+        _bloodParticle.SetActive(true);
+        _spriteRenderer.sprite = _enemyDeadSprites[_selectedSprite];
+        
+        
         transform.DOKill();
         
         Vector3 dir = GetPlayerDir();
         Vector3 movePos = transform.position + dir * 3f;
         
         transform.DOMove(movePos, 5f).SetEase(Ease.OutSine);
-        
-        // cutting animation
-        _bloodParticle.SetActive(true);
-        _spriteRenderer.sprite = _enemyDeadSprites[_selectedSprite];
     }
 }

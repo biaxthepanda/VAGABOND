@@ -43,11 +43,14 @@ public class LevelBehaviour : StaticInstance<LevelBehaviour>
         //wait for delay and attack
         if (_enemyController == null)
             _enemyController = GetComponentInChildren<EnemyController>();
+
+        _slowMotionDuration *= LevelManager.Instance.SlowTimeMultiplier;
+        
         DOVirtual.DelayedCall(_runningDelay, () =>
         {
             _enemyController.Attack();
             GameManager.Instance.ChangeState(GameManager.GameState.Defending);
         });
-        
+
     }
 }

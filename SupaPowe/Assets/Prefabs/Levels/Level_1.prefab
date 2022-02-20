@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: _slowMotionDistance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7398873377429800612, guid: 35b6fd51cc5c75f4b9466fd3db194bcc, type: 3}
+      propertyPath: _slowMotionDuration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7398873377429800613, guid: 35b6fd51cc5c75f4b9466fd3db194bcc, type: 3}
       propertyPath: m_RootOrder
       value: 0

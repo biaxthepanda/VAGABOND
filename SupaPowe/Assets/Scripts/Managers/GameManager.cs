@@ -45,12 +45,22 @@ public class GameManager : Singleton<GameManager>
             case GameState.Defending:
                 break;
             case GameState.Attacking:
+                Attacking();
                 break;
             case GameState.Act:
+                Act();
                 break;
             case GameState.Win:
+                Win();
                 break;
             case GameState.Lose:
+                Lose();
+                break;
+            case GameState.SceneChange:
+                SceneChange();
+                break;
+            case GameState.NoBlackScreen:
+                NoBlackScreen();
                 break;
                 
         }
@@ -86,15 +96,23 @@ public class GameManager : Singleton<GameManager>
     }
     private void Act()
     {
-        
+        _uiController.ChangeCanvasView(UIController.CurrentUI.BlackScreen);
     }
     private void Win()
     {
-        
+        _uiController.ChangeCanvasView(UIController.CurrentUI.NoBlackScreen);
     }
     private void Lose()
     {
-        
+        _uiController.ChangeCanvasView(UIController.CurrentUI.NoBlackScreen);
+    }
+    private void SceneChange()
+    {
+        _uiController.ChangeCanvasView(UIController.CurrentUI.FadeInFadeOut);
+    }
+    private void NoBlackScreen()
+    {
+        _uiController.ChangeCanvasView(UIController.CurrentUI.NoBlackScreen);
     }
 
 
@@ -108,5 +126,7 @@ public class GameManager : Singleton<GameManager>
         Act = 4, // Cutting animations etc.
         Win = 5,
         Lose = 6,
+        SceneChange = 7, //fadeout fadein
+        NoBlackScreen = 8,
     }
 }

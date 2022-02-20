@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
+using TMPro.EditorUtilities;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
@@ -12,6 +15,9 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private GameObject _inGameCanvas;
     
+    [SerializeField]
+    private Image _blackScreenCanvasImage;
+    
     void Awake()
     {
         if (_mainMenuCanvas == null)
@@ -19,6 +25,11 @@ public class UIController : MonoBehaviour
         
         if (_inGameCanvas == null)
             _inGameCanvas = GameObject.Find("InGameCanvas");
+        
+        if (_blackScreenCanvasImage == null)
+            _blackScreenCanvasImage = GameObject.Find("BlackScreenCanvas").GetComponentInChildren<Image>();
+        
+        _blackScreenCanvasImage.DOFade(0, 1);
         
     }
 
@@ -33,6 +44,25 @@ public class UIController : MonoBehaviour
         else if (ui == CurrentUI.InGame)
         {
             _inGameCanvas.SetActive(true);
+        }
+        else if (ui == CurrentUI.FadeInFadeOut)
+        {
+            
+            _blackScreenCanvasImage.DOFade(0, 0);
+            
+            _blackScreenCanvasImage.DOFade(1, 1).OnComplete((() =>
+            {
+                GameManager.Instance.ChangeState(GameManager.GameState.Idle);
+                _blackScreenCanvasImage.DOFade(0, 1);
+            }));
+        }
+        else if (ui == CurrentUI.BlackScreen)
+        {
+            _blackScreenCanvasImage.DOFade(0.5f, 0.5f);
+        }
+        else if (ui == CurrentUI.NoBlackScreen)
+        {
+            _blackScreenCanvasImage.DOFade(0, 0.5f);
         }
 
     }
@@ -58,6 +88,9 @@ public class UIController : MonoBehaviour
         MainMenu = 0,
         InGame = 1,
         Attacking = 2,
-        Deactivated = 4,
+        BlackScreen = 3,
+        NoBlackScreen = 4,
+        Deactivated = 5,
+        FadeInFadeOut = 6,
     }
 }

@@ -34,6 +34,8 @@ public class LevelManager : Singleton<LevelManager>
     {
         if (state == GameManager.GameState.Idle)
         {
+            if (CurrentLevel >= _levels.Count) return;
+            
             DOVirtual.DelayedCall(1f, () => _activeLevel = Instantiate(_levels[CurrentLevel], _levelParent));
 
             return;
@@ -46,8 +48,6 @@ public class LevelManager : Singleton<LevelManager>
                 _activeLevel = null;
 
                 _currentLevel++;
-                
-                GameManager.Instance.ChangeState(GameManager.GameState.Idle);
             });
         } 
         else if (state == GameManager.GameState.Lose)
@@ -56,8 +56,6 @@ public class LevelManager : Singleton<LevelManager>
             {
                 Destroy(_activeLevel);
                 _activeLevel = null;
-                
-                GameManager.Instance.ChangeState(GameManager.GameState.Idle);
             });
         }
         

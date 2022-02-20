@@ -76,6 +76,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _runningDelay: 5
+  _enemyComeDuration: 2
+  _slowMotionDuration: 10
+  _slowMotionStartDistance: 7
+  _slowMotionEndDistance: 6.5
+  maxDrawDrawDistance: 5
+  _maxDrawCount: 5
   _enemyController: {fileID: 0}
 --- !u!1001 &938612702136501010
 PrefabInstance:
@@ -84,6 +90,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7398873377429800613}
     m_Modifications:
+    - target: {fileID: 1146484607065275707, guid: bfe10facabb2eab4599333046779de84, type: 3}
+      propertyPath: _cutPrefab
+      value: 
+      objectReference: {fileID: 2578420474294700434, guid: db89e6dceb64c3b42986cd05b4c2ea33, type: 3}
     - target: {fileID: 4609601540665553492, guid: bfe10facabb2eab4599333046779de84, type: 3}
       propertyPath: m_RootOrder
       value: 0
