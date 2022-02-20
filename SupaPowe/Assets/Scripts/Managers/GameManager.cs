@@ -17,6 +17,7 @@ public class GameManager : Singleton<GameManager>
     private CameraController _cameraController;
 
     private bool _isStarted = false;
+    public bool IsStarted => _isStarted;
     
     void Start()
     {

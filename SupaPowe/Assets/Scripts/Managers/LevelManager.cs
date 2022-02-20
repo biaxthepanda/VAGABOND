@@ -58,6 +58,12 @@ public class LevelManager : Singleton<LevelManager>
                 _activeLevel = null;
             });
         }
+        else if (state == GameManager.GameState.Menu)
+        {
+            if (_activeLevel == null) return;
+            
+            Destroy(_activeLevel);
+        }
         
         
     }

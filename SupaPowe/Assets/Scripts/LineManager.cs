@@ -51,6 +51,9 @@ public class LineManager : MonoBehaviour
         {
             drawnLine = 0;
             distanceTraveled = 0;
+        }
+        else if (state == GameManager.GameState.Act)
+        {
             transform.DestroyChildren();
         }
     }

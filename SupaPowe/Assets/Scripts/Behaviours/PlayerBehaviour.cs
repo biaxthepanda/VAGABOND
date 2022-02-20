@@ -58,15 +58,16 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void AttackAnim()
     {
+        _animator.Play("Attack");
         //play at the start of Attacking state
         //on animator connect attack and attackidle together
     }
     private void AttackDoneAnim()
     {
-        //play at the start of Win state
+        _animator.Play("PuttingSwordBack");
         DOVirtual.DelayedCall(1f, () =>
         {
-            //play walking animation
+            _animator.Play("Walk");
             transform.DOMove(transform.right * 10f, 3f).SetEase(Ease.Linear).OnComplete((() =>
             {
                 GameManager.Instance.ChangeState(GameManager.GameState.SceneChange);
@@ -77,6 +78,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         transform.DOKill();
         transform.position = Vector3.zero;
+        _animator.Play("Walk");
         //play at the start of idle scene
     }
 
