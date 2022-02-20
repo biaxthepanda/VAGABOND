@@ -114,4 +114,10 @@ public class PlayerBehaviour : MonoBehaviour
         
         DOVirtual.DelayedCall(5f, () => GameManager.Instance.ChangeState(GameManager.GameState.SceneChange));
     }
+
+
+    public void PlayWalkSound()
+    {
+        SoundController.Instance.PlayWalk();
+    }
 }
