@@ -1,10 +1,28 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UpgradeButtons : MonoBehaviour
 {
-   
+
+    [SerializeField]
+    private GameObject _upgrades;
+
+    private void OnEnable() {
+        GameManager.OnGameStateChanged += ActivateUpgrade;
+    }
+
+    private void OnDisable() {
+        GameManager.OnGameStateChanged -= ActivateUpgrade;
+    }
+
+    private void ActivateUpgrade(GameManager.GameState state) {
+
+        if (state != GameManager.GameState.Upgrade) return;
+
+        DOVirtual.DelayedCall(0.5f, () => _upgrades.SetActive(true));
+    }
 
 
     public void SlowTimeUpgrade()
