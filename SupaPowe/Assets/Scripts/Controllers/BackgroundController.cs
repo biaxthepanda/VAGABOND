@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,27 +6,32 @@ using DG.Tweening;
 
 public class BackgroundController : MonoBehaviour
 {
+    private bool _isRunning = false;
+    
+    [SerializeField]
+    private float _speed = 2f;
 
-
-    public bool isRunning;
-    public float speed;
-
-    void Start()
+    private void OnEnable()
     {
-        DOTween.Init();
+        GameManager.OnGameStateChanged += ActivateRunning;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameStateChanged -= ActivateRunning;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isRunning)
+        if (_isRunning)
         {
-            transform.Translate(Vector2.left*speed*Time.deltaTime);
+            transform.Translate(Vector2.left * _speed * Time.deltaTime);
         }
     }
 
-    private void ActivateRunning()
+    private void ActivateRunning(GameManager.GameState state)
     {
-        isRunning = true;
+        _isRunning = state == GameManager.GameState.Idle ? true : false;
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class SoundController : PersistentSingleton<SoundController>
+public class SoundController : Singleton<SoundController>
 {
     [SerializeField]
     private List<AudioClip> _musics;
@@ -32,6 +32,7 @@ public class SoundController : PersistentSingleton<SoundController>
         _effectPlayer.loop = false;
         _effectPlayer.Stop();
 
+        DontDestroyOnLoad(this);
     }
 
     public void PlayMusic(Musics music)
@@ -50,15 +51,20 @@ public class SoundController : PersistentSingleton<SoundController>
             
             SwitchSelectedPlayer();
             _musicPlayer[_selectedMusicPlayer].clip = _musics[(int)music];
-            _musicPlayer[_selectedMusicPlayer].Play();
+            _musicPlayer[_selectedMusicPlayer].PlayDelayed(0.1f);
             _musicPlayer[_selectedMusicPlayer].DOFade(1, 3);
             
         }
         else
         {
             _musicPlayer[_selectedMusicPlayer].clip = _musics[(int)music];
-            _musicPlayer[_selectedMusicPlayer].Play();
-            _musicPlayer[_selectedMusicPlayer].DOFade(1, 3);
+            
+            
+            DOVirtual.DelayedCall(1f, () =>
+            {
+                _musicPlayer[_selectedMusicPlayer].Play();
+                _musicPlayer[_selectedMusicPlayer].DOFade(1, 3);
+            });
         }
     }
     
