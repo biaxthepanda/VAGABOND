@@ -699,6 +699,9 @@ MonoBehaviour:
   prepareDefendDuration: 5
   _timer: 0
   isDead: 0
+  idleDeath: []
+  spritesDef: []
+  spritesAttack: []
 --- !u!4 &1975939156
 Transform:
   m_ObjectHideFlags: 0
