@@ -3,9 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Audio;
 
-public class SoundController : Singleton<SoundController>
+public class SoundController : PersistentSingleton<SoundController>
 {
+    [SerializeField]
+    private AudioMixer _mixer;
+    
     [SerializeField]
     private List<AudioClip> _musics;
 
@@ -31,8 +35,6 @@ public class SoundController : Singleton<SoundController>
         _effectPlayer.volume = 1;
         _effectPlayer.loop = false;
         _effectPlayer.Stop();
-
-        DontDestroyOnLoad(this);
     }
 
     public void PlayMusic(Musics music)
@@ -78,20 +80,34 @@ public class SoundController : Singleton<SoundController>
         _selectedMusicPlayer = _selectedMusicPlayer == 1 ? 0 : 1;
     }
 
+    public void SetMaster(float value)
+    {
+        _mixer.SetFloat("Master", value);
+    }
+    public void SetMusic(float value)
+    {
+        _mixer.SetFloat("Music", value);
+    }
+    public void SetSFX(float value)
+    {
+        _mixer.SetFloat("SFX", value);
+    }
 
     [Serializable]
     public enum Musics
     {
         Menu = 0,
         Idle = 1,
-        GameLoop = 2,
+        Combat = 2,
         BossMusic = 3,
     }
     
     [Serializable]
     public enum SoundEffects
     {
-        Walking = 0,
-        Slashing = 1,
+        Swoosh = 0,
+        SwordIn = 1,
+        Blood = 2,
+        Walking = 3,
     }
 }
