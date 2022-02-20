@@ -46,6 +46,11 @@ public class LineManager : MonoBehaviour
     private void Activate(GameManager.GameState state)
     {
         _isActive = state == GameManager.GameState.Attacking;
+
+        if (state == GameManager.GameState.Idle)
+        {
+            transform.DestroyChildren();
+        }
     }
 
     private void Start()
