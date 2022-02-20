@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 
@@ -25,7 +26,14 @@ public class BossController : MonoBehaviour
 
     private void Start()
     {
-        ChangeBossState(BossState.PrepareAttack);
+        Transform _player = GameObject.FindWithTag("Player").transform;
+
+        Vector3 dir = (transform.position - _player.position).normalized;;
+        Vector3 slowStartPos = _player.position + dir * 4f;
+
+        transform.DOMove(slowStartPos, 1).SetEase(Ease.Linear);
+
+        DOVirtual.DelayedCall(1, () => ChangeBossState(BossState.PrepareAttack));
     }
 
 

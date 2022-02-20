@@ -9,17 +9,17 @@ public class UpgradeButtons : MonoBehaviour
 
     public void SlowTimeUpgrade()
     {
-        LevelManager.Instance.slowTimeMultiplier *= 1.1f;
+        LevelManager.Instance.SlowTimeMultiplier *= 1.1f;
         Destroy(gameObject);
     }
     public void LineLengthUpgrade()
     {
-        LevelManager.Instance.lineLengthMultiplier *= 1.3f;
+        LevelManager.Instance.LineLengthMultiplier *= 1.3f;
         Destroy(gameObject);
     }
     public void BonusLineUpgrade()
     {
-        LevelManager.Instance.bonusLine += 1;
+        LevelManager.Instance.BonusLine += 1;
         Destroy(gameObject);
     }
 

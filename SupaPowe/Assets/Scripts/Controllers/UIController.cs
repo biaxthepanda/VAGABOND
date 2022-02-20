@@ -37,7 +37,7 @@ public class UIController : MonoBehaviour
 
     }
 
-    public void DeactivateAll()
+    private void DeactivateAll()
     {
         _mainMenuCanvas.SetActive(false);
         _inGameCanvas.SetActive(false);
@@ -57,6 +57,7 @@ public class UIController : MonoBehaviour
     {
         MainMenu = 0,
         InGame = 1,
+        Attacking = 2,
         Deactivated = 4,
     }
 }

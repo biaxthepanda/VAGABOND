@@ -32,7 +32,7 @@ public class LineManager : MonoBehaviour
 
     Vector2 firstPos;
 
-    /*
+    
     private void OnEnable()
     {
         GameManager.OnGameStateChanged += Activate;
@@ -47,16 +47,16 @@ public class LineManager : MonoBehaviour
     {
         _isActive = state == GameManager.GameState.Attacking;
     }
-    */
+
     private void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        Debug.Log(mainCam.name);
+        // Debug.Log(mainCam.name);
     }
 
     private void Update()
     {
-        //if (!_isActive) return;
+        if (!_isActive) return;
         if (Input.GetMouseButtonDown(0))
         {
 
@@ -68,11 +68,11 @@ public class LineManager : MonoBehaviour
         {
             if(distanceTraveled < maxDistance && drawnLine < maxDrawing) 
             {
-            Vector2 tempFingerPos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 tempFingerPos = mainCam.ScreenToWorldPoint(Input.mousePosition);
             if (Vector2.Distance(tempFingerPos,fingerPositions[fingerPositions.Count -1]) > minDistance)
             {
                 distanceTraveled += Vector2.Distance(tempFingerPos, fingerPositions[fingerPositions.Count - 1]);
-                Debug.Log(Vector2.Distance(tempFingerPos, fingerPositions[fingerPositions.Count - 1]));
+                // Debug.Log(Vector2.Distance(tempFingerPos, fingerPositions[fingerPositions.Count - 1]));
                 UpdateLine(tempFingerPos);
                 
 
@@ -95,14 +95,14 @@ public class LineManager : MonoBehaviour
 
     void CreateLine()
     {
-        //maxDistance = LevelBehaviour.Instance.MaxDrawDistance;
-        //maxDrawing = LevelBehaviour.Instance.MaxDrawCount;
+        maxDistance = LevelBehaviour.Instance.MaxDrawDistance * LevelManager.Instance.LineLengthMultiplier;
+        maxDrawing = LevelBehaviour.Instance.MaxDrawCount + LevelManager.Instance.BonusLine;
         
         if (drawnLine > maxDrawing) return;
         
         
         isDrawing = true;
-        currentLine = Instantiate(linePrefab, Vector3.zero, Quaternion.identity);
+        currentLine = Instantiate(linePrefab, Vector3.zero, Quaternion.identity, transform);
         lineRenderer = currentLine.GetComponent<LineRenderer>();
         edgeCollider = currentLine.GetComponent<EdgeCollider2D>();
         fingerPositions.Clear();
@@ -113,7 +113,7 @@ public class LineManager : MonoBehaviour
         lineRenderer.SetPosition(1, fingerPositions[1]);
         edgeCollider.points = fingerPositions.ToArray();
         
-        //OnLineStarted?.Invoke();
+        OnLineStarted?.Invoke();
         
     }
 
@@ -135,7 +135,7 @@ public class LineManager : MonoBehaviour
             bossScript = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossController>();
             float xDistance = firstPos.x - mainCam.ScreenToWorldPoint(Input.mousePosition).x;
             float yDistance = firstPos.y - mainCam.ScreenToWorldPoint(Input.mousePosition).y;
-            Debug.Log("x:" + xDistance + " y:" + yDistance);
+            // Debug.Log("x:" + xDistance + " y:" + yDistance);
             if(bossScript.BState == BossController.BossState.PrepareDefend)
             {
                 if (Mathf.Abs(xDistance) > Mathf.Abs(yDistance))
