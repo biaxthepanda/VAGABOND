@@ -23,7 +23,7 @@ public class UpgradeButtons : MonoBehaviour
 
         //if random bla bla return;
 
-        DOVirtual.DelayedCall(0.5f, () => _upgrades.SetActive(true));
+        DOVirtual.DelayedCall(1f, () => _upgrades.SetActive(true));
     }
 
 

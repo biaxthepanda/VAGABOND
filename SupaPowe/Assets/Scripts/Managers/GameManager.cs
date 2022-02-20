@@ -63,6 +63,9 @@ public class GameManager : Singleton<GameManager>
             case GameState.NoBlackScreen:
                 NoBlackScreen();
                 break;
+            case GameState.Upgrade:
+                Upgrade();
+                break;
                 
         }
         
@@ -83,6 +86,7 @@ public class GameManager : Singleton<GameManager>
     private void Idle()
     {
         _uiController.ChangeCanvasView(UIController.CurrentUI.Deactivated);
+        _uiController.ChangeCanvasView(UIController.CurrentUI.NoBlackScreen);
         SoundController.Instance.PlayMusic(SoundController.Musics.Idle);
         _cameraController.SwitchCamera(CameraController.CamPosition.GamePosition);
         
