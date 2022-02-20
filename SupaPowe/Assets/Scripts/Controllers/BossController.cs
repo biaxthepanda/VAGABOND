@@ -211,9 +211,15 @@ public class BossController : MonoBehaviour
         isDead = true;
         ChangeBossState(BossState.Dead);
         _timer = 0;
+        GameManager.Instance.ChangeState(GameManager.GameState.Win); // ACT'e Çevir
+        
 
     }
 
+    public void PlayerWin()
+    {
+        GameManager.Instance.ChangeState(GameManager.GameState.Win);
+    }
 
     public void AttackPrepare()
     {
@@ -276,6 +282,8 @@ public class BossController : MonoBehaviour
             _isAttackWaiting = false;
             Debug.Log("Player Öldü");
             _timer = 0;
+            GameManager.Instance.ChangeState(GameManager.GameState.Lose);
+
 
             //Player Couldn't Block The Boss Attack, Level Restart
         }
