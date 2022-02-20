@@ -831,6 +831,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvases
       objectReference: {fileID: 0}
+    - target: {fileID: 4091361935518714810, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4091361935518714821, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1021,7 +1025,7 @@ PrefabInstance:
       objectReference: {fileID: 759660390}
     - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
       propertyPath: _levels.Array.size
-      value: 4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
       propertyPath: slowTimeMultiplier
@@ -1042,11 +1046,59 @@ PrefabInstance:
     - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
       propertyPath: _levels.Array.data[2]
       value: 
-      objectReference: {fileID: 4693654327438586243, guid: f291edf425d5fe64ea087db1fdeb3b41, type: 3}
+      objectReference: {fileID: 5157104946777393816, guid: 5bc89cf06c64e2449a912a98bacac755, type: 3}
     - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
       propertyPath: _levels.Array.data[3]
       value: 
-      objectReference: {fileID: 5157104946777393816, guid: 5bc89cf06c64e2449a912a98bacac755, type: 3}
+      objectReference: {fileID: 5157104946777393816, guid: f0e641adbb7f3ef4bb5a27cbdef8251f, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[4]
+      value: 
+      objectReference: {fileID: 5157104946777393816, guid: 6a4b413998086e249b991495d320d520, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[5]
+      value: 
+      objectReference: {fileID: 5157104946777393816, guid: ec9453c9a50f6594eb1db176a09ceadc, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[6]
+      value: 
+      objectReference: {fileID: 4693654327438586243, guid: f291edf425d5fe64ea087db1fdeb3b41, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[7]
+      value: 
+      objectReference: {fileID: 5157104946777393816, guid: 37b96cd72a54e184d90c1e0f98b368da, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[8]
+      value: 
+      objectReference: {fileID: 5157104946777393816, guid: 13f260267e036cc4da22c61ed90b0d4c, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[9]
+      value: 
+      objectReference: {fileID: 5157104946777393816, guid: 29d4e5dd0cb311c4aacd9cd8e569cc94, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[10]
+      value: 
+      objectReference: {fileID: 5157104946777393816, guid: 59bcd7a9a01429141b2d58464a35fd17, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[11]
+      value: 
+      objectReference: {fileID: 5157104946777393816, guid: 173d7d2d1ab53324abcf4cb1f36cfee6, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[12]
+      value: 
+      objectReference: {fileID: 5157104946777393816, guid: 8d4bf8efa6349764290a61d86e326eb7, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[13]
+      value: 
+      objectReference: {fileID: 5157104946777393816, guid: 4fddbcbc05d878740b70fc4e93e3bf06, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[14]
+      value: 
+      objectReference: {fileID: 5157104946777393816, guid: 9293211ee76e0bc4587ba0ec158616dd, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[15]
+      value: 
+      objectReference: {fileID: 4693654327438586243, guid: c97773e4dc19a3e4392e6d0cc23a31b7, type: 3}
     - target: {fileID: 8384263234165426315, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
       propertyPath: m_Name
       value: Managers

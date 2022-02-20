@@ -63,7 +63,16 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void AttackAnim()
     {
-        _animator.Play("Attack");
+        int i = (int)UnityEngine.Random.Range(0, 2);
+        if(i == 0)
+        {
+            _animator.Play("Attack");
+        }
+        else
+        {
+            _animator.Play("AttackSecond");
+        }
+
         //play at the start of Attacking state
         //on animator connect attack and attackidle together
     }
@@ -84,18 +93,22 @@ public class PlayerBehaviour : MonoBehaviour
     {
         transform.DOKill();
         transform.position = Vector3.zero;
-        _animator.Play("Walk");
+        int i = (int)UnityEngine.Random.Range(0,2);
+        
+         _animator.Play("Walk");
+        
         //play at the start of idle scene
     }
     
     private void IdleAnim()
     {
-        // _animator.Play("Idle");
+         _animator.Play("Idle");
     }
 
     private void DieAnim()
     {
         //play at the start of Lose state
+        _animator.Play("Death");
         _bloodPrefab.SetActive(true);
         DOVirtual.DelayedCall(3f, () => _bloodPrefab.SetActive(false));
         

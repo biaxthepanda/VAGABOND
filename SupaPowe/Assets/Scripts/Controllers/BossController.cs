@@ -39,7 +39,7 @@ public class BossController : MonoBehaviour
         Transform _player = GameObject.FindWithTag("Player").transform;
 
         Vector3 dir = (transform.position - _player.position).normalized;;
-        Vector3 slowStartPos = _player.position + dir * 4f;
+        Vector3 slowStartPos = _player.position + dir * 3f;
 
         transform.DOMove(slowStartPos, 1).SetEase(Ease.Linear);
 
