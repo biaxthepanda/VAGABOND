@@ -8,8 +8,6 @@ public class BossController : MonoBehaviour
 {
 
     public float health;
-    public LayerMask pwLayerMask;
-    public Transform[] swordPlaces;
 
     public float prepareAttackDuration;
     public float prepareDefendDuration;
@@ -20,6 +18,9 @@ public class BossController : MonoBehaviour
 
     int defendPosition = 0;
     int attackPosition = 0;
+
+    public bool isDead = false;
+
     public BossState BState { get; private set; }
 
     
@@ -41,7 +42,7 @@ public class BossController : MonoBehaviour
 
     private void Update()
     {
-
+        if (isDead) return;
         if (_isDefendWaiting)
         {
             _timer += Time.deltaTime;
@@ -82,7 +83,7 @@ public class BossController : MonoBehaviour
         Attack = 1,
         PrepareDefend = 2,
         Defend = 3,
-
+        Dead = 4,
     }
 
     public void ChangeBossState(BossState newState)
@@ -149,7 +150,6 @@ public class BossController : MonoBehaviour
             //Boss get damage
             _isDefendWaiting = false;
             GetDamage(25);
-            ChangeBossState(BossState.Defend);
             _timer = 0;
 
         }
@@ -162,7 +162,13 @@ public class BossController : MonoBehaviour
 
         health -= damage;
         if (health <= 0)
+        {
             Die();
+        }
+        else
+        {
+            ChangeBossState(BossState.Defend);
+        }
         _timer = 0;
 
     }
@@ -171,6 +177,8 @@ public class BossController : MonoBehaviour
     {
         //Death
         Debug.Log("Boss is dead");
+        isDead = true;
+        ChangeBossState(BossState.Dead);
         _timer = 0;
 
     }
@@ -218,7 +226,6 @@ public class BossController : MonoBehaviour
         else
         {
             _isAttackWaiting = false;
-
             Debug.Log("Player Öldü");
             _timer = 0;
 

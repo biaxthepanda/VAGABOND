@@ -131,8 +131,13 @@ public class LineManager : MonoBehaviour
     {
         if (GameObject.FindGameObjectWithTag("Boss") != null)
         {
+            
             BossController bossScript;
             bossScript = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossController>();
+
+
+            if (bossScript.isDead) return;
+
             float xDistance = firstPos.x - mainCam.ScreenToWorldPoint(Input.mousePosition).x;
             float yDistance = firstPos.y - mainCam.ScreenToWorldPoint(Input.mousePosition).y;
             // Debug.Log("x:" + xDistance + " y:" + yDistance);
