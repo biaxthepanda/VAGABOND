@@ -49,6 +49,8 @@ public class LineManager : MonoBehaviour
 
         if (state == GameManager.GameState.Idle)
         {
+            drawnLine = 0;
+            distanceTraveled = 0;
             transform.DestroyChildren();
         }
     }
