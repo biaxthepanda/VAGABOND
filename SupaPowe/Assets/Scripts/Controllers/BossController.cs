@@ -24,8 +24,10 @@ public class BossController : MonoBehaviour
     public Sprite[] idleDeath;
     public Sprite[] spritesDef;
     public Sprite[] spritesAttack;
+    public Sprite[] icons;
     SpriteRenderer _spriteRenderer;
 
+    public SpriteRenderer behaviourIconRenderer;
 
     public BossState BState { get; private set; }
 
@@ -100,6 +102,7 @@ public class BossController : MonoBehaviour
         switch (newState)
         {
             case BossState.PrepareAttack:
+                behaviourIconRenderer.sprite = icons[0];
                 AttackPrepare();
                 GameManager.Instance.ChangeState(GameManager.GameState.Attacking);
                 _isAttackWaiting = true;
@@ -107,6 +110,7 @@ public class BossController : MonoBehaviour
                 break;
 
             case BossState.Attack:
+                behaviourIconRenderer.sprite = null;
                 _spriteRenderer.sprite = idleDeath[0];
                 _isAttackWaiting = false;
                 ChangeBossState(BossState.PrepareDefend);
@@ -115,12 +119,14 @@ public class BossController : MonoBehaviour
                 break;
 
             case BossState.PrepareDefend:
+                behaviourIconRenderer.sprite = icons[1];
                 Defend();
                 GameManager.Instance.ChangeState(GameManager.GameState.Attacking);
                 _isDefendWaiting = true;
                 break;
 
             case BossState.Defend:
+                behaviourIconRenderer.sprite = null;
                 _spriteRenderer.sprite = idleDeath[0];
                 _isDefendWaiting = false;
                 ChangeBossState(BossState.PrepareAttack);
