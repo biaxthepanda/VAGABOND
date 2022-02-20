@@ -21,6 +21,8 @@ public class UpgradeButtons : MonoBehaviour
 
         if (state != GameManager.GameState.Upgrade) return;
 
+        //if random bla bla return;
+
         DOVirtual.DelayedCall(0.5f, () => _upgrades.SetActive(true));
     }
 
@@ -39,6 +41,10 @@ public class UpgradeButtons : MonoBehaviour
     {
         LevelManager.Instance.BonusLine += 1;
         Destroy(gameObject);
+    }
+
+    private void NextLevel() {
+        GameManager.Instance.ChangeState(GameManager.GameState.SceneChange);
     }
 
 
