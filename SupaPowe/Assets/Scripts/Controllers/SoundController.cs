@@ -35,6 +35,11 @@ public class SoundController : PersistentSingleton<SoundController>
         _effectPlayer.volume = 1;
         _effectPlayer.loop = false;
         _effectPlayer.Stop();
+        
+        
+        SetMaster(PlayerPrefs.GetFloat("MasterSound", 0));
+        SetMusic(PlayerPrefs.GetFloat("MusicSound", 0));
+        SetSFX(PlayerPrefs.GetFloat("SFXSound", 0), false);
     }
 
     public void PlayMusic(Musics music)
@@ -72,7 +77,7 @@ public class SoundController : PersistentSingleton<SoundController>
     
     public void PlaySFX(SoundEffects effect)
     {
-        _effectPlayer.clip = _effects[(int)effect];
+        _effectPlayer.PlayOneShot(_effects[(int)effect]);
     }
 
     private void SwitchSelectedPlayer()
@@ -83,14 +88,20 @@ public class SoundController : PersistentSingleton<SoundController>
     public void SetMaster(float value)
     {
         _mixer.SetFloat("Master", value);
+        PlayerPrefs.SetFloat("MasterSound", value);
     }
     public void SetMusic(float value)
     {
         _mixer.SetFloat("Music", value);
+        PlayerPrefs.SetFloat("MusicSound", value);
     }
-    public void SetSFX(float value)
+    public void SetSFX(float value, bool playSFXDemo = true)
     {
         _mixer.SetFloat("SFX", value);
+        PlayerPrefs.SetFloat("SFXSound", value);
+        
+        if (playSFXDemo && !_effectPlayer.isPlaying)
+            PlaySFX(SoundEffects.Swoosh);
     }
 
     [Serializable]
