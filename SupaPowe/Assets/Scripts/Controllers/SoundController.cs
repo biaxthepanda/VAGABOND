@@ -22,6 +22,11 @@ public class SoundController : PersistentSingleton<SoundController>
     private List<AudioClip> _effects;
     [SerializeField]
     private AudioSource _effectPlayer;
+    
+    [SerializeField]
+    private List<AudioClip> _walkSounds;
+    [SerializeField]
+    private AudioSource _walkPlayer;
 
     private void Start()
     {
@@ -35,6 +40,10 @@ public class SoundController : PersistentSingleton<SoundController>
         _effectPlayer.volume = 1;
         _effectPlayer.loop = false;
         _effectPlayer.Stop();
+        
+        _walkPlayer.volume = 1;
+        _walkPlayer.loop = false;
+        _walkPlayer.Stop();
         
         
         SetMaster(PlayerPrefs.GetFloat("MasterSound", 0));
@@ -84,6 +93,12 @@ public class SoundController : PersistentSingleton<SoundController>
     {
         _selectedMusicPlayer = _selectedMusicPlayer == 1 ? 0 : 1;
     }
+    
+    
+    public void PlayWalk()
+    {
+        _walkPlayer.PlayOneShot(_walkSounds.Rand());
+    }
 
     public void SetMaster(float value)
     {
@@ -103,6 +118,7 @@ public class SoundController : PersistentSingleton<SoundController>
         if (playSFXDemo && !_effectPlayer.isPlaying)
             PlaySFX(SoundEffects.Swoosh);
     }
+
 
     [Serializable]
     public enum Musics
