@@ -190,6 +190,20 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
+                    "m_Id": "104be381f31d4da399f86e2b441a247a"
+                },
+                "m_SlotId": 7
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "b3bcb05fede34bb7963e1383eadd99c3"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
                     "m_Id": "1b757966b6a94f1daff9466a707209f1"
                 },
                 "m_SlotId": 0
@@ -1019,7 +1033,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "155b3464476a4ab296f97b0d03ee3391",
     "m_Id": 0,
-    "m_DisplayName": "_MainTex",
+    "m_DisplayName": "MainTexture",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1186,7 +1200,7 @@
     "m_ActiveSubTarget": {
         "m_Id": "eda227bf94b846e3a32cd56195c089a6"
     },
-    "m_SurfaceType": 0,
+    "m_SurfaceType": 1,
     "m_AlphaMode": 0,
     "m_TwoSided": false,
     "m_AlphaClip": false,
@@ -2172,7 +2186,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "x": 0.5,
+        "x": 0.4099999964237213,
         "y": 0.5,
         "z": 0.0,
         "w": 0.0

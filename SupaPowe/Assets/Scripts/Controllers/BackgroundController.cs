@@ -14,6 +14,14 @@ public class BackgroundController : MonoBehaviour
     Material _firstMat;
     public Material shockWaveMat;
 
+    SpriteRenderer pl;
+
+    private void Start()
+    {
+        pl = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
+
+    }
+
 
     private void OnEnable()
     {
@@ -49,16 +57,21 @@ public class BackgroundController : MonoBehaviour
 
     IEnumerator ChangeBackGrounds()
     {
-        _firstMat = transform.GetChild(0).GetComponent<SpriteRenderer>().material;
+        /*_firstMat = transform.GetChild(0).GetComponent<SpriteRenderer>().material;
         foreach(Transform child in transform)
         {
             child.GetComponent<SpriteRenderer>().material = shockWaveMat;
         }
-        yield return new WaitForSeconds(0.5f);
+        
         foreach (Transform child in transform)
         {
             child.GetComponent<SpriteRenderer>().material = _firstMat;
         }
+        */
+        _firstMat = pl.material;
+        pl.material = shockWaveMat;
+        yield return new WaitForSeconds(0.5f);
+        pl.material = _firstMat;
     }
 
 }

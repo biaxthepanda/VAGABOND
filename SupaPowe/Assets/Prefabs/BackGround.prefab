@@ -1707,8 +1707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fcd6b4bccb59114ebfc6181dfab889b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRunning: 0
-  speed: 2
+  _speed: 2
+  shockWaveMat: {fileID: 2100000, guid: e580d66a48d5eec4483c70f960aa9f34, type: 2}
 --- !u!1 &2488253740136349994
 GameObject:
   m_ObjectHideFlags: 0

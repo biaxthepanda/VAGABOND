@@ -891,6 +891,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2488253740127730889, guid: 2b37474bf054c734399a1dadc9b4364a, type: 3}
+      propertyPath: shockWaveMat
+      value: 
+      objectReference: {fileID: 2100000, guid: e580d66a48d5eec4483c70f960aa9f34, type: 2}
     - target: {fileID: 2488253740127730890, guid: 2b37474bf054c734399a1dadc9b4364a, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -939,6 +943,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackGround
       objectReference: {fileID: 0}
+    - target: {fileID: 2488253740308714798, guid: 2b37474bf054c734399a1dadc9b4364a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b37474bf054c734399a1dadc9b4364a, type: 3}
 --- !u!1001 &2917078549871513609
