@@ -115,6 +115,10 @@ public class GameManager : Singleton<GameManager>
     {
         _uiController.ChangeCanvasView(UIController.CurrentUI.NoBlackScreen);
     }
+    private void Upgrade()
+    {
+        _uiController.ChangeCanvasView(UIController.CurrentUI.BlackScreen);
+    }
 
 
     [Serializable]
@@ -129,5 +133,6 @@ public class GameManager : Singleton<GameManager>
         Lose = 6,
         SceneChange = 7, //fadeout fadein
         NoBlackScreen = 8,
+        Upgrade = 9,
     }
 }
