@@ -76,7 +76,7 @@ public class PlayerBehaviour : MonoBehaviour
             _animator.Play("Walk");
             transform.DOMove(transform.right * 10f, 3f).SetEase(Ease.Linear).OnComplete((() =>
             {
-                GameManager.Instance.ChangeState(GameManager.GameState.SceneChange);
+                GameManager.Instance.ChangeState(GameManager.GameState.Upgrade);
             }));
         });
     }
