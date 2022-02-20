@@ -70,6 +70,7 @@ public class PlayerBehaviour : MonoBehaviour
     private void AttackDoneAnim()
     {
         _animator.Play("PuttingSwordBack");
+        SoundController.Instance.PlaySFX(SoundController.SoundEffects.SwordIn);
         DOVirtual.DelayedCall(1f, () =>
         {
             _animator.Play("Walk");
