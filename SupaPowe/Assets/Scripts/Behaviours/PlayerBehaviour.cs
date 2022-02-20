@@ -105,6 +105,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void PlayWalkSound()
     {
-        SoundController.Instance.PlayWalk();
+        SoundController.Instance.PlaySFX(SoundController.SoundEffects.Walking);
     }
 }

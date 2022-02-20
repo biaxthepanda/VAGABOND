@@ -86,6 +86,11 @@ public class SoundController : PersistentSingleton<SoundController>
     
     public void PlaySFX(SoundEffects effect)
     {
+        if (effect == SoundEffects.Walking)
+        {
+            PlayWalk();
+            return;
+        }
         _effectPlayer.PlayOneShot(_effects[(int)effect]);
     }
 
@@ -95,7 +100,7 @@ public class SoundController : PersistentSingleton<SoundController>
     }
     
     
-    public void PlayWalk()
+    private void PlayWalk()
     {
         _walkPlayer.PlayOneShot(_walkSounds.Rand());
     }
