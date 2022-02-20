@@ -1141,6 +1141,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 759660390}
     - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
       propertyPath: slowTimeMultiplier
       value: 1
       objectReference: {fileID: 0}
@@ -1148,6 +1152,22 @@ PrefabInstance:
       propertyPath: lineLengthMultiplier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[0]
+      value: 
+      objectReference: {fileID: 5157104946777393816, guid: 5f343298173f1b740a2cd88b0c5ab576, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[1]
+      value: 
+      objectReference: {fileID: 5157104946777393816, guid: ba86348f652a040489c28300f93e93f2, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[2]
+      value: 
+      objectReference: {fileID: 4693654327438586243, guid: f291edf425d5fe64ea087db1fdeb3b41, type: 3}
+    - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
+      propertyPath: _levels.Array.data[3]
+      value: 
+      objectReference: {fileID: 5157104946777393816, guid: 5bc89cf06c64e2449a912a98bacac755, type: 3}
     - target: {fileID: 8384263234165426315, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
       propertyPath: m_Name
       value: Managers
