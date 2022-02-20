@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField]
     private List<EnemyBehaviour> _enemyBehaviours;
+    
+    private List<Vector3> _enemyOffsets = new List<Vector3>();
 
     [SerializeField]
     private Transform _player;
@@ -24,6 +26,22 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+           
+        for (int i = 0; i < _enemyCount; i++)
+        {
+            var enemy = _enemyBehaviours[i];
+            var position = enemy.transform.position;
+            
+            _enemyOffsets.Add(position);
+            
+            position *= 10f;
+            
+            enemy.transform.position = position;
+        }
+    }
+
     public void Attack()
     {
         if (_player == null)
@@ -35,14 +53,15 @@ public class EnemyController : MonoBehaviour
         var slowStartDistance = levelBehaviour.SlowMotionStartDistance;
         var slowEndDistance = levelBehaviour.SlowMotionEndDistance;
             
-        foreach (var enemy in _enemyBehaviours)
+        for (int i = 0; i < _enemyCount; i++)
         {
             // if (enemy.TryGetComponent(out RangedEnemyBehaviour rangedEnemy))
             // {
             //     rangedEnemy.Initialize(_player);
             // }
+            var enemy = _enemyBehaviours[i];
 
-            enemy.Initialize(_player, comeDuration, slowMotionDuration, slowStartDistance, slowEndDistance);
+            enemy.Initialize(_player, _enemyOffsets[i], comeDuration, slowMotionDuration, slowStartDistance, slowEndDistance);
         }
 
         DOVirtual.DelayedCall(comeDuration + 0.1f, (() =>

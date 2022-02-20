@@ -56,6 +56,10 @@ public class LineManager : MonoBehaviour
         {
             transform.DestroyChildren();
         }
+        else if (_isActive)
+        {
+            transform.DestroyChildren();
+        }
     }
 
     private void Start()

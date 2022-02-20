@@ -11,9 +11,9 @@ public class RangedEnemyBehaviour : EnemyBehaviour
     [SerializeField]
     private GameObject _throwObject;
 
-    public override void Initialize(Transform player, float comeDuration = 2f, float slowMotionDuration = 10f, float slowMotionStartDistance = 1f, float slowMotionEndDistance = 0f)
+    public override void Initialize(Transform player, Vector3 offset, float comeDuration = 2f, float slowMotionDuration = 10f, float slowMotionStartDistance = 1f, float slowMotionEndDistance = 0f)
     {
-        base.Initialize(player, comeDuration, slowMotionDuration, slowMotionStartDistance + 1, slowMotionEndDistance + 1);
+        base.Initialize(player, offset, comeDuration, slowMotionDuration, slowMotionStartDistance + 1, slowMotionEndDistance + 1);
         
         DOVirtual.DelayedCall(comeDuration + 1f, () => ThrowShuriken());
     }

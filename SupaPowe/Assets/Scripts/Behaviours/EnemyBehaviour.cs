@@ -23,17 +23,17 @@ public class EnemyBehaviour : MonoBehaviour
 
     protected Transform _player;
 
-    public virtual void Initialize(Transform player, float comeDuration = 2f, float slowMotionDuration = 10f, float slowMotionStartDistance = 7f, float slowMotionEndDistance = 6f)
+    public virtual void Initialize(Transform player, Vector3 offset, float comeDuration = 2f, float slowMotionDuration = 10f, float slowMotionStartDistance = 7f, float slowMotionEndDistance = 6f)
     {
         _player = player;
         SelectSprite();
 
         Vector3 dir = GetPlayerDir();
-        Vector3 slowStartPos = _player.position + dir * slowMotionStartDistance;
+        Vector3 slowStartPos = _player.position + dir * slowMotionStartDistance + offset;
 
         transform.DOMove(slowStartPos, comeDuration).SetEase(Ease.Linear).OnComplete((() =>
         {
-            Vector3 slowEndPos = _player.position + dir * slowMotionEndDistance;
+            Vector3 slowEndPos = _player.position + dir * slowMotionEndDistance + offset;
             transform.DOMove(slowEndPos, slowMotionDuration).SetEase(Ease.Linear);
         }));
     }
@@ -73,5 +73,6 @@ public class EnemyBehaviour : MonoBehaviour
         Vector3 movePos = transform.position + dir * 3f;
         
         transform.DOMove(movePos, 5f).SetEase(Ease.OutSine);
+        _spriteRenderer.DOFade(0, 5.5f).SetEase(Ease.OutSine);;
     }
 }
