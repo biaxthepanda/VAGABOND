@@ -55,6 +55,13 @@ public class TutorialLevelController : Singleton<TutorialLevelController>
         // EnemyController isTutorial = true
             
         StopAllCoroutines();
+        
+        if (_tutorialMouse != null)
+        {
+            _tutorialMouse.transform.DOKill();
+            Destroy(_tutorialMouse);
+            _tutorialMouse = null;
+        }
 
         StartCoroutine(TutorialStart(_levelData[LevelManager.Instance.CurrentLevel]));
     }
