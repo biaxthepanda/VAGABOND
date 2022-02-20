@@ -11,6 +11,18 @@ public class BackgroundController : MonoBehaviour
     [SerializeField]
     private float _speed = 2f;
 
+    Material _firstMat;
+    public Material shockWaveMat;
+
+    SpriteRenderer pl;
+
+    private void Start()
+    {
+        pl = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
+
+    }
+
+
     private void OnEnable()
     {
         GameManager.OnGameStateChanged += ActivateRunning;
@@ -28,10 +40,38 @@ public class BackgroundController : MonoBehaviour
         {
             transform.Translate(Vector2.left * _speed * Time.deltaTime);
         }
+       
     }
 
     private void ActivateRunning(GameManager.GameState state)
     {
         _isRunning = state == GameManager.GameState.Idle ? true : false;
+
+        if(GameManager.Instance.State == GameManager.GameState.Attacking)
+        {
+            StartCoroutine(ChangeBackGrounds());
+        }
     }
+
+
+
+    IEnumerator ChangeBackGrounds()
+    {
+        /*_firstMat = transform.GetChild(0).GetComponent<SpriteRenderer>().material;
+        foreach(Transform child in transform)
+        {
+            child.GetComponent<SpriteRenderer>().material = shockWaveMat;
+        }
+        
+        foreach (Transform child in transform)
+        {
+            child.GetComponent<SpriteRenderer>().material = _firstMat;
+        }
+        */
+        _firstMat = pl.material;
+        pl.material = shockWaveMat;
+        yield return new WaitForSeconds(0.5f);
+        pl.material = _firstMat;
+    }
+
 }
