@@ -28,6 +28,8 @@ public class EnemyController : MonoBehaviour
 
     private void Awake()
     {
+        if (_enemyBehaviours == null || _enemyBehaviours.Count == 0)
+            _enemyBehaviours = new List<EnemyBehaviour>(FindObjectsOfType<EnemyBehaviour>());
            
         for (int i = 0; i < _enemyCount; i++)
         {
