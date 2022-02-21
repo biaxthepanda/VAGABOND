@@ -65,7 +65,9 @@ public class EnemyBehaviour : MonoBehaviour
     {
         _bloodParticle.SetActive(true);
         _spriteRenderer.sprite = _enemyDeadSprites[_selectedSprite];
-        SoundController.Instance.PlaySFX(SoundController.SoundEffects.Blood);
+        SoundController.Instance.PlaySFX(SoundController.SoundEffects.DamageFirst);
+        DOVirtual.DelayedCall(0.3f, () => SoundController.Instance.PlaySFX(SoundController.SoundEffects.Blood));
+        
 
 
         transform.DOKill();

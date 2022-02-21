@@ -17,6 +17,9 @@ public class UIController : MonoBehaviour
     
     [SerializeField]
     private Image _blackScreenCanvasImage;
+
+    [SerializeField]
+    Sprite _deathImage;
     
     void Awake()
     {
@@ -92,5 +95,11 @@ public class UIController : MonoBehaviour
         NoBlackScreen = 4,
         Deactivated = 5,
         FadeInFadeOut = 6,
+    }
+
+    public void BlackScreenToDeath()
+    {
+        _blackScreenCanvasImage.sprite = _deathImage;
+        DOVirtual.DelayedCall(0.5f, ()=> _blackScreenCanvasImage.sprite = null);
     }
 }

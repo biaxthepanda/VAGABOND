@@ -188,6 +188,7 @@ public class BossController : MonoBehaviour
 
             //Boss blocked the player
             _isDefendWaiting = false;
+            SoundController.Instance.PlaySFX(SoundController.SoundEffects.SwordClash);
             ChangeBossState(BossState.Defend);
             _timer = 0;
 
@@ -325,6 +326,7 @@ public class BossController : MonoBehaviour
         {
             Debug.Log("Player Boss'u Blockladý");
             //Player Blocked The Boss Attack
+            SoundController.Instance.PlaySFX(SoundController.SoundEffects.SwordClash);
             _isAttackWaiting = false;
             ChangeBossState(BossState.Attack);
             _timer = 0;

@@ -26,6 +26,8 @@ public class SoundController : PersistentSingleton<SoundController>
     [SerializeField]
     private List<AudioClip> _walkSounds;
     [SerializeField]
+    private List<AudioClip> _clashSounds;
+    [SerializeField]
     private AudioSource _walkPlayer;
 
     private void Start()
@@ -90,6 +92,10 @@ public class SoundController : PersistentSingleton<SoundController>
         {
             PlayWalk();
             return;
+        }else if(effect == SoundEffects.SwordClash)
+        {
+            PlaySwordClash();
+            return;
         }
         _effectPlayer.PlayOneShot(_effects[(int)effect]);
     }
@@ -104,6 +110,10 @@ public class SoundController : PersistentSingleton<SoundController>
     {
 		if (_walkPlayer.isPlaying) return;
         _walkPlayer.PlayOneShot(_walkSounds.Rand());
+    }
+    private void PlaySwordClash()
+    {
+        _effectPlayer.PlayOneShot(_clashSounds.Rand());
     }
 
     public void SetMaster(float value)
@@ -144,5 +154,6 @@ public class SoundController : PersistentSingleton<SoundController>
         Walking = 3,
         DamageFirst = 4,
         DamageSecond = 5,
+        SwordClash = 6,
     }
 }

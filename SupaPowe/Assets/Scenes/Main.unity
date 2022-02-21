@@ -891,6 +891,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7907439205386388850, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8594001961694112838, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -981,11 +985,47 @@ PrefabInstance:
     - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: _effects.Array.data[4]
       value: 
-      objectReference: {fileID: 8300000, guid: 8230af7e703b96842bc61656707a07ab, type: 3}
+      objectReference: {fileID: 8300000, guid: 303566fe58f86cb4b82cc60b97c5c9de, type: 3}
     - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: _effects.Array.data[5]
       value: 
-      objectReference: {fileID: 8300000, guid: 303566fe58f86cb4b82cc60b97c5c9de, type: 3}
+      objectReference: {fileID: 8300000, guid: 8230af7e703b96842bc61656707a07ab, type: 3}
+    - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+      propertyPath: _effects.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+      propertyPath: _effects.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+      propertyPath: _effects.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+      propertyPath: _effects.Array.data[9]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+      propertyPath: _clashSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+      propertyPath: _clashSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e7617eb85456a5c4bba9ed383b887558, type: 3}
+    - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+      propertyPath: _clashSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: b8af866fec735f24094f6d69fcc83651, type: 3}
+    - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+      propertyPath: _clashSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 190b7373f1d096c459bd24df73c76f9a, type: 3}
+    - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+      propertyPath: _clashSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0eef035b6509d64499cc3e84aa501160, type: 3}
     - target: {fileID: 7201522879672422541, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: m_Name
       value: Controllers
@@ -1034,6 +1074,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7746156471615321921, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+      propertyPath: _deathImage
+      value: 
+      objectReference: {fileID: 21300000, guid: aed093b4a4c54d84286f3020a14a6e3f, type: 3}
     - target: {fileID: 7746156471615321921, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: _inGameCanvas
       value: 
@@ -1158,7 +1202,7 @@ PrefabInstance:
     - target: {fileID: 8162660712113303079, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
       propertyPath: _levels.Array.data[21]
       value: 
-      objectReference: {fileID: 4693654327438586243, guid: c97773e4dc19a3e4392e6d0cc23a31b7, type: 3}
+      objectReference: {fileID: 4693654327438586243, guid: 200667fecbd11394487117a77d98ba45, type: 3}
     - target: {fileID: 8384263234165426315, guid: f6d7c6fe67fa5334f95a68eda8705cff, type: 3}
       propertyPath: m_Name
       value: Managers
