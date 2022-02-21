@@ -324,3 +324,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogue: {fileID: 5552575866134427779}
+  _image: {fileID: 6161870698902268999}

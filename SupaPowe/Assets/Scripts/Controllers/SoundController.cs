@@ -84,7 +84,11 @@ public class SoundController : PersistentSingleton<SoundController>
     {
         if (_musicPlayer[_selectedMusicPlayer].isPlaying)
         {
-            if (_musicPlayer[_selectedMusicPlayer].clip.Equals(_musics[(int)music])) return;
+            if (_musicPlayer[_selectedMusicPlayer].clip.Equals(_musics[(int)music]))
+            {
+                _musicPlayer[_selectedMusicPlayer].volume = 1;
+                return;
+            }
             
             _musicPlayer[_selectedMusicPlayer].DOFade(0, 3);
             

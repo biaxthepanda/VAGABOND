@@ -53,11 +53,11 @@ public class LevelBehaviour : StaticInstance<LevelBehaviour>
         {
             if (isBoss >= 0)
             {
-                SoundController.Instance.PlayDialogue(isBoss);
                 if (isBoss == 0)
                     DialogueCanvas.Instance.Dialogue("Slash at same direction.\nDefend at different direction.", 4f);
                 else if (isBoss == 1)
                     DialogueCanvas.Instance.Dialogue("This samurai might be tricky, he's concealing his attacks.", 4f);
+                SoundController.Instance.PlayDialogue(isBoss);
             }
         });
 
