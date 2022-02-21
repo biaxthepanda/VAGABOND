@@ -200,7 +200,7 @@ public class BossController : MonoBehaviour
     public void GetDamage(float damage)
     {
         Debug.Log("Boss Damage Aldý");
-
+        SoundController.Instance.PlaySFX(SoundController.SoundEffects.DamageFirst);
         health -= damage;
         if (health <= 0)
         {
@@ -224,6 +224,7 @@ public class BossController : MonoBehaviour
         _timer = 0;
         GameManager.Instance.ChangeState(GameManager.GameState.Act); // ACT'e Çevir
         _spriteRenderer.sprite = idleDeath[1];
+        SoundController.Instance.PlaySFX(SoundController.SoundEffects.Blood);
         DOVirtual.DelayedCall(1f,() => GameManager.Instance.ChangeState(GameManager.GameState.Win));
 
 

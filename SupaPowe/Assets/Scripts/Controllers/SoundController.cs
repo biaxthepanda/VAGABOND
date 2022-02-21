@@ -142,5 +142,7 @@ public class SoundController : PersistentSingleton<SoundController>
         SwordIn = 1,
         Blood = 2,
         Walking = 3,
+        DamageFirst = 4,
+        DamageSecond = 5,
     }
 }

@@ -110,6 +110,8 @@ public class PlayerBehaviour : MonoBehaviour
         //play at the start of Lose state
         _animator.Play("Death");
         _bloodPrefab.SetActive(true);
+         SoundController.Instance.PlaySFX(SoundController.SoundEffects.Blood);
+
         DOVirtual.DelayedCall(3f, () => _bloodPrefab.SetActive(false));
         
         DOVirtual.DelayedCall(5f, () => GameManager.Instance.ChangeState(GameManager.GameState.SceneChange));
