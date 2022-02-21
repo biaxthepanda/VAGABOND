@@ -808,6 +808,9 @@ MonoBehaviour:
   _windPlayer: {fileID: 4468799806301217117}
   windTimer: 0
   windCountdown: 5
+  _dialogueClip1: {fileID: 8300000, guid: e0949333ba0a098468321b212d51f205, type: 3}
+  _dialogueClip2: {fileID: 8300000, guid: ee2b1a67fbff4464188deb77b8ce6c3f, type: 3}
+  _dialoguePlayer: {fileID: 0}
 --- !u!1 &8581932376759373888
 GameObject:
   m_ObjectHideFlags: 0
