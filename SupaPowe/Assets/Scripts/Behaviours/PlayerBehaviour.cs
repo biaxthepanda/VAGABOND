@@ -93,9 +93,8 @@ public class PlayerBehaviour : MonoBehaviour
     {
         transform.DOKill();
         transform.position = Vector3.zero;
-        int i = (int)UnityEngine.Random.Range(0,2);
         
-         _animator.Play("Walk");
+         _animator.Play("WalkSecond");
         
         //play at the start of idle scene
     }

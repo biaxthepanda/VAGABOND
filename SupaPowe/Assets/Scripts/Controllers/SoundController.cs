@@ -33,6 +33,13 @@ public class SoundController : PersistentSingleton<SoundController>
     private AudioSource _windPlayer;
     public float windTimer;
     public float windCountdown = 5;
+    
+    [SerializeField]
+    private AudioClip _dialogueClip1;
+    [SerializeField]
+    private AudioClip _dialogueClip2;
+    [SerializeField]
+    private AudioSource _dialoguePlayer;
 
     private void Start()
     {
@@ -118,6 +125,12 @@ public class SoundController : PersistentSingleton<SoundController>
             return;
         }
         _effectPlayer.PlayOneShot(_effects[(int)effect]);
+    }
+    public void PlayDialogue(int boss)
+    {
+        var clip = boss == 0 ? _dialogueClip1 : _dialogueClip2;
+        
+        _dialoguePlayer.PlayOneShot(clip);
     }
 
     private void SwitchSelectedPlayer()

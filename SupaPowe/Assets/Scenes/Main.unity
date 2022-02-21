@@ -1736,6 +1736,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2064315727}
+    - target: {fileID: 3917149674537920799, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4091361935518714810, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
       propertyPath: m_Name
       value: Canvases
@@ -1793,6 +1797,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8594001961694112838, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156488912865399654, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1884,8 +1892,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420031}
     - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+      propertyPath: _dialoguePlayer
+      value: 
+      objectReference: {fileID: 7201522878820072081}
+    - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: _effects.Array.size
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: _effects.Array.data[2]
@@ -1894,7 +1906,7 @@ PrefabInstance:
     - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: _effects.Array.data[3]
       value: 
-      objectReference: {fileID: 8300000, guid: ec808093de554e245b7ecd944d5bcd8b, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: _effects.Array.data[4]
       value: 
@@ -1906,11 +1918,11 @@ PrefabInstance:
     - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: _effects.Array.data[6]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 8230af7e703b96842bc61656707a07ab, type: 3}
     - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: _effects.Array.data[7]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: ec808093de554e245b7ecd944d5bcd8b, type: 3}
     - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: _effects.Array.data[8]
       value: 
@@ -2017,6 +2029,11 @@ PrefabInstance:
       objectReference: {fileID: 1279682571}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+--- !u!82 &7201522878820072081 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2106228530518291303, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+  m_PrefabInstance: {fileID: 7201522878820072080}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8384263234603127972
 PrefabInstance:
   m_ObjectHideFlags: 0

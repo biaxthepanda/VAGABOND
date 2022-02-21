@@ -35,6 +35,9 @@ public class LevelBehaviour : StaticInstance<LevelBehaviour>
 
     [SerializeField]
     private EnemyController _enemyController;
+    
+    [SerializeField]
+    private int isBoss = -1;
 
     public void Start()
     {
@@ -45,12 +48,26 @@ public class LevelBehaviour : StaticInstance<LevelBehaviour>
             _enemyController = GetComponentInChildren<EnemyController>();
 
         _slowMotionDuration *= LevelManager.Instance.SlowTimeMultiplier;
+
+        DOVirtual.DelayedCall(1f, () =>
+        {
+            if (isBoss >= 0)
+            {
+                SoundController.Instance.PlayDialogue(isBoss);
+                if (isBoss == 0)
+                    DialogueCanvas.Instance.Dialogue("Slash at same direction.\nDefend at different direction.", 4f);
+                else if (isBoss == 1)
+                    DialogueCanvas.Instance.Dialogue("This samurai might be tricky, he's concealing his attacks.", 4f);
+            }
+        });
+
         
         DOVirtual.DelayedCall(_runningDelay, () =>
         {
             SoundController.Instance.PlayMusic(SoundController.Musics.Combat);
             _enemyController.Attack();
             GameManager.Instance.ChangeState(GameManager.GameState.Defending);
+
         });
 
     }
