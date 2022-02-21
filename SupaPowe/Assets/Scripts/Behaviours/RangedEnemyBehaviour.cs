@@ -30,6 +30,7 @@ public class RangedEnemyBehaviour : EnemyBehaviour
         var throwObj = Instantiate(_throwObject,new Vector3(transform.position.x,transform.position.y,0),Quaternion.identity).transform;
         throwObj.parent = transform;
         throwObj.up = dir * -1f;
+        SoundController.Instance.PlaySFX(SoundController.SoundEffects.Shuriken);
         throwObj.DOMove(_player.position,25f).SetEase(Ease.OutSine);
         
         _spriteRenderer.sprite = _enemyEmptyHandSprites[_selectedSprite];

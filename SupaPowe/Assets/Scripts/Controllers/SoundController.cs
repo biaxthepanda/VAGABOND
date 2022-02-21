@@ -76,7 +76,7 @@ public class SoundController : PersistentSingleton<SoundController>
             windTimer = 0;
             _windPlayer.DOKill();
             _windPlayer.DOFade(0,2);
-            DOVirtual.DelayedCall(2.5f, () => _windPlayer.DOFade(1,2f));
+            DOVirtual.DelayedCall(2.5f, () => _windPlayer.DOFade(0.05f,2f));
         }
     }
 
@@ -193,5 +193,6 @@ public class SoundController : PersistentSingleton<SoundController>
         DamageSecond = 5,
         SwordClash = 6,
         Death = 7,
+        Shuriken = 8,
     }
 }
