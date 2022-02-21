@@ -782,7 +782,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6f5590053159f5b4982265f3192cac1e, type: 3}
   - {fileID: 8300000, guid: 7887ee7882bfda64ab4a5c5a342e6ffa, type: 3}
   - {fileID: 8300000, guid: 0a17ed1f5fcdf444da6e15f6059a0d66, type: 3}
-  - {fileID: 8300000, guid: 7887ee7882bfda64ab4a5c5a342e6ffa, type: 3}
+  - {fileID: 8300000, guid: 40b51edc1d4f6934bb81f9ba85ba09bc, type: 3}
   _musicPlayer:
   - {fileID: 1192897912681939919}
   - {fileID: 1960339538795959635}

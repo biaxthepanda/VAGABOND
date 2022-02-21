@@ -64,7 +64,8 @@ public class LevelBehaviour : StaticInstance<LevelBehaviour>
         
         DOVirtual.DelayedCall(_runningDelay, () =>
         {
-            SoundController.Instance.PlayMusic(SoundController.Musics.Combat);
+            if (isBoss != -1)
+                SoundController.Instance.PlayMusic(SoundController.Musics.Combat);
             _enemyController.Attack();
             GameManager.Instance.ChangeState(GameManager.GameState.Defending);
 

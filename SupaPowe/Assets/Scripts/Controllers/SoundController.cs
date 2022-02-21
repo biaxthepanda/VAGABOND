@@ -79,7 +79,7 @@ public class SoundController : PersistentSingleton<SoundController>
             DOVirtual.DelayedCall(2.5f, () => _windPlayer.DOFade(0.05f,2f));
         }
     }
-
+    private Tween tween;
     public void PlayMusic(Musics music)
     {
         if (_musicPlayer[_selectedMusicPlayer].isPlaying)
@@ -89,11 +89,16 @@ public class SoundController : PersistentSingleton<SoundController>
                 _musicPlayer[_selectedMusicPlayer].volume = 1;
                 return;
             }
+
+            this.DOKill();
+            _musicPlayer[0].DOKill();
+            _musicPlayer[1].DOKill();
+            tween.Kill();
             
             _musicPlayer[_selectedMusicPlayer].DOFade(0, 3);
             
             var fadingPlayer = _selectedMusicPlayer;
-            DOVirtual.DelayedCall(3.01f, () =>
+            tween = DOVirtual.DelayedCall(3.01f, () =>
             {
                 _musicPlayer[fadingPlayer].Stop();
             });
@@ -135,6 +140,8 @@ public class SoundController : PersistentSingleton<SoundController>
         var clip = boss == 0 ? _dialogueClip1 : _dialogueClip2;
         
         _dialoguePlayer.PlayOneShot(clip);
+        
+        PlayMusic(Musics.BossMusic);
     }
 
     private void SwitchSelectedPlayer()
