@@ -29,6 +29,10 @@ public class SoundController : PersistentSingleton<SoundController>
     private List<AudioClip> _clashSounds;
     [SerializeField]
     private AudioSource _walkPlayer;
+    [SerializeField]
+    private AudioSource _windPlayer;
+    public float windTimer;
+    public float windCountdown = 5;
 
     private void Start()
     {
@@ -51,6 +55,21 @@ public class SoundController : PersistentSingleton<SoundController>
         SetMaster(PlayerPrefs.GetFloat("MasterSound", 0));
         SetMusic(PlayerPrefs.GetFloat("MusicSound", 0));
         SetSFX(PlayerPrefs.GetFloat("SFXSound", 0), false);
+    }
+
+    private void Update()
+    {
+        if(windTimer <= windCountdown)
+        {
+            windTimer += Time.deltaTime;
+        }
+        else
+        {
+            windCountdown = UnityEngine.Random.Range(9, 15);
+            windTimer = 0;
+            _windPlayer.DOFade(0,2);
+            DOVirtual.DelayedCall(2.5f, () => _windPlayer.DOFade(1,2f));
+        }
     }
 
     public void PlayMusic(Musics music)
