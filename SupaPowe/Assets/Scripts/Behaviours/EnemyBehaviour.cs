@@ -79,8 +79,9 @@ public class EnemyBehaviour : MonoBehaviour
         EnemyOut();
     }
 
-    public void EnemyOut()
+    public void EnemyOut(bool isShort = false)
     {
-        _spriteRenderer.DOFade(0, 5.5f).SetEase(Ease.OutSine);;
+        var dur = !isShort ? 5.5f : 2.9f;
+        _spriteRenderer.DOFade(0, dur).SetEase(Ease.OutSine);;
     }
 }

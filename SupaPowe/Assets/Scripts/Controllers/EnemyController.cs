@@ -124,7 +124,7 @@ public class EnemyController : MonoBehaviour
             {
                 if (!enemy.IsDead)
                 {
-                    enemy.EnemyOut();
+                    enemy.EnemyOut(true);
                 }
             }
             yield return new WaitForSeconds(destroyCut/2f);

@@ -24,6 +24,7 @@ public class DeadCanvas : MonoBehaviour
         {
             DOVirtual.DelayedCall(2f, () =>
             {
+                SoundController.Instance.PlaySFX(SoundController.SoundEffects.Death);
                 _deadImage.DOFade(1f, 3f).SetEase(Ease.OutExpo).OnComplete((() =>
                 {
                     _deadImage.DOFade(0f, 1f).SetEase(Ease.Linear);
