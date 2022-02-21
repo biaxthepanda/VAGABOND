@@ -61,11 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
       propertyPath: prepareAttackDuration
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
       propertyPath: prepareDefendDuration
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
       propertyPath: idleDeath.Array.data[0]

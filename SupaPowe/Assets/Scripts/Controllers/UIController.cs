@@ -18,6 +18,8 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private Image _blackScreenCanvasImage;
 
+    public GameObject canvasEnd;
+
     [SerializeField]
     Sprite _deathImage;
     

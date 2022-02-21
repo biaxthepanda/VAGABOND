@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-
+using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class BossController : MonoBehaviour
 {
@@ -238,8 +239,19 @@ public class BossController : MonoBehaviour
         GameManager.Instance.ChangeState(GameManager.GameState.Act); // ACT'e Çevir
         _spriteRenderer.sprite = idleDeath[1];
         SoundController.Instance.PlaySFX(SoundController.SoundEffects.Blood);
+        if (_canFake)
+        {
+            GameObject.Find("UIController").GetComponent<UIController>().canvasEnd.SetActive(true);
+            PlayableDirector playable = GameObject.Find("Ending_Cinematic").GetComponent<PlayableDirector>();
+            playable.Play();
+            float i = (float)playable.duration;
+            DOVirtual.DelayedCall(i, ()=> GameManager.Instance.ChangeState(GameManager.GameState.Menu));
+            DOVirtual.DelayedCall(i, () => SceneManager.LoadScene("Main"));
+            
+            return;
+        }
         DOVirtual.DelayedCall(1f,() => GameManager.Instance.ChangeState(GameManager.GameState.Win));
-
+        
 
 
     }
