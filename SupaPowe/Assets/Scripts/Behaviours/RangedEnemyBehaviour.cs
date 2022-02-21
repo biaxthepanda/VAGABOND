@@ -26,8 +26,11 @@ public class RangedEnemyBehaviour : EnemyBehaviour
         var dir = GetPlayerDir();
         
         // Instantiate shuriken towards the player
-        // var throwObj = Instantiate(_throwObject, transform.position - dir);
-        // throwObj.up = dir * -1f;
+    
+        var throwObj = Instantiate(_throwObject,new Vector3(transform.position.x,transform.position.y,0),Quaternion.identity).transform;
+        throwObj.parent = transform;
+        throwObj.up = dir * -1f;
+        throwObj.DOMove(_player.position,25f).SetEase(Ease.OutSine);
         
         _spriteRenderer.sprite = _enemyEmptyHandSprites[_selectedSprite];
     }

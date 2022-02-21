@@ -35,7 +35,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a0f8e5ac51f09f843a7346e247a05e90, type: 3}
   - {fileID: 21300000, guid: 9ebb2c4e001d75f45a161d2ad47d1bf5, type: 3}
   - {fileID: 21300000, guid: 9e40b143b5f5de8479d6f0059930e5c7, type: 3}
-  _throwObject: {fileID: 0}
+  _throwObject: {fileID: 7727264929936907254, guid: 5a8e642bfc0aab14f8bb25578e92b0bf, type: 3}
 --- !u!1001 &5239716140689978606
 PrefabInstance:
   m_ObjectHideFlags: 0
