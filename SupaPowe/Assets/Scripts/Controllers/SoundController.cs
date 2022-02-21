@@ -102,6 +102,7 @@ public class SoundController : PersistentSingleton<SoundController>
     
     private void PlayWalk()
     {
+		if (_walkPlayer.isPlaying) return;
         _walkPlayer.PlayOneShot(_walkSounds.Rand());
     }
 
