@@ -574,7 +574,7 @@ MonoBehaviour:
   _transform: {fileID: 1314247409}
   _audioSource: {fileID: 109833447}
   _target: {fileID: 727727628}
-  _duration: 45
+  _duration: 44
 --- !u!114 &1178813490
 MonoBehaviour:
   m_ObjectHideFlags: 0
