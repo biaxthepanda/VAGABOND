@@ -1007,8 +1007,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+      propertyPath: _walkSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: _clashSounds.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
+      propertyPath: _walkSounds.Array.data[4]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: _clashSounds.Array.data[0]
