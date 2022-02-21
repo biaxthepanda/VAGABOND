@@ -134,7 +134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7398873377429800612, guid: 35b6fd51cc5c75f4b9466fd3db194bcc, type: 3}
       propertyPath: _maxDrawCount
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7398873377429800612, guid: 35b6fd51cc5c75f4b9466fd3db194bcc, type: 3}
       propertyPath: _enemyComeDuration
