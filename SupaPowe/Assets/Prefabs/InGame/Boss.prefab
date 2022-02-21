@@ -71,6 +71,8 @@ MonoBehaviour:
   - {fileID: -8340692379967442788, guid: 6f53bbe587a17ce4c8bdad8cd851510d, type: 3}
   - {fileID: -7094449997892624913, guid: 6f53bbe587a17ce4c8bdad8cd851510d, type: 3}
   - {fileID: 105365090487110971, guid: 6f53bbe587a17ce4c8bdad8cd851510d, type: 3}
+  _canFake: 0
+  colorDamage: {r: 1, g: 0.8, b: 0.827451, a: 1}
 --- !u!212 &4830880991293649189
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -39,6 +39,8 @@ public class BossController : MonoBehaviour
     [SerializeField]
     bool _canFake;
 
+    public Color colorDamage;
+
     public BossState BState { get; private set; }
 
     
@@ -54,6 +56,8 @@ public class BossController : MonoBehaviour
         transform.DOMove(slowStartPos, 1).SetEase(Ease.Linear);
 
         DOVirtual.DelayedCall(1, () => ChangeBossState(BossState.PrepareAttack));
+
+   
     }
 
 
@@ -208,6 +212,8 @@ public class BossController : MonoBehaviour
     {
         Debug.Log("Boss Damage Aldý");
         SoundController.Instance.PlaySFX(SoundController.SoundEffects.DamageFirst);
+        _spriteRenderer.color = colorDamage;
+        DOVirtual.DelayedCall(0.2f, () => _spriteRenderer.color = Color.white);
         health -= damage;
         if (health <= 0)
         {
