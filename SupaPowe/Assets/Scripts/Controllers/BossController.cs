@@ -218,12 +218,15 @@ public class BossController : MonoBehaviour
     {
         //Death
         Debug.Log("Boss is dead");
-        _spriteRenderer.sprite = idleDeath[1];
+        
         isDead = true;
         ChangeBossState(BossState.Dead);
         _timer = 0;
-        GameManager.Instance.ChangeState(GameManager.GameState.Win); // ACT'e Çevir
-        
+        GameManager.Instance.ChangeState(GameManager.GameState.Act); // ACT'e Çevir
+        _spriteRenderer.sprite = idleDeath[1];
+        DOVirtual.DelayedCall(1f,() => GameManager.Instance.ChangeState(GameManager.GameState.Win));
+
+
 
     }
 
