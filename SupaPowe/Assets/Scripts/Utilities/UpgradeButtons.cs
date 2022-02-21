@@ -21,7 +21,7 @@ public class UpgradeButtons : MonoBehaviour
 
         if (state != GameManager.GameState.Upgrade) return;
 
-        //if random bla bla return;
+        if (LevelManager.Instance.CurrentLevel % 2 != 0) return;
 
         DOVirtual.DelayedCall(1f, () => _upgrades.SetActive(true));
     }
