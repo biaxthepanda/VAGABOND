@@ -34,7 +34,7 @@ public class UpgradeButtons : MonoBehaviour
     }
     public void LineLengthUpgrade()
     {
-        LevelManager.Instance.LineLengthMultiplier *= 1.3f;
+        LevelManager.Instance.LineLengthMultiplier *= 1.1f;
         NextLevel();
     }
     public void BonusLineUpgrade()

@@ -80,8 +80,8 @@ MonoBehaviour:
   _slowMotionDuration: 10
   _slowMotionStartDistance: 7
   _slowMotionEndDistance: 6.5
-  maxDrawDrawDistance: 5
-  _maxDrawCount: 5
+  maxDrawDrawDistance: 1.5
+  _maxDrawCount: 1
   _enemyController: {fileID: 0}
 --- !u!1001 &938612702136501010
 PrefabInstance:
