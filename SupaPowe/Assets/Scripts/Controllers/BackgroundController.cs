@@ -16,6 +16,8 @@ public class BackgroundController : MonoBehaviour
 
     SpriteRenderer pl;
 
+    
+
     private void Start()
     {
         pl = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();

@@ -51,10 +51,74 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: health
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: _canFake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: prepareAttackDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: prepareDefendDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: idleDeath.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: a97e3fcca21b43f4c9baff956f5d643c, type: 3}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: idleDeath.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: bd1b1ea9c37c5934fadfe8e76b7f6150, type: 3}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: spritesAttack.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: spritesDef.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e1928d9e01762641bbc90761ecf3efa, type: 3}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: spritesDef.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3837aa36db1549848a79b33d0bd9bd6d, type: 3}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: spritesDef.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 454f34732c7d51d42b43037c02580c16, type: 3}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: spritesAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 01b114e7606a2d048997f45172937006, type: 3}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: spritesAttack.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: cd8837cfaf31fa141bc12687b685ac35, type: 3}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: spritesAttack.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0530794611fdc924aa5d64e16ac7e632, type: 3}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: spritesAttack.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: f8c1f0e3edae1aa44b5cee42c0686b63, type: 3}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: spritesAttack.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4ae4c2156a5847349a953921e4e84384, type: 3}
+    - target: {fileID: 4830880991293649188, guid: 791499a954336b4449921f610c25340e, type: 3}
+      propertyPath: spritesAttack.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: d68be84cf232f8044a1dc77750c94136, type: 3}
     - target: {fileID: 4830880991293649189, guid: 791499a954336b4449921f610c25340e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0ef5733ec58693f4ea5ac9076904a8a2, type: 3}
+      objectReference: {fileID: 21300000, guid: a97e3fcca21b43f4c9baff956f5d643c, type: 3}
     - target: {fileID: 4830880991293649191, guid: 791499a954336b4449921f610c25340e, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -166,7 +230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7398873377429800619, guid: 35b6fd51cc5c75f4b9466fd3db194bcc, type: 3}
       propertyPath: m_Name
-      value: Level_Boss
+      value: Level_Boss2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35b6fd51cc5c75f4b9466fd3db194bcc, type: 3}

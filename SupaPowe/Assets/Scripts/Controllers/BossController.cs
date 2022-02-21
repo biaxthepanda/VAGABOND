@@ -33,6 +33,12 @@ public class BossController : MonoBehaviour
     SpriteRenderer directionRenderer;
     [SerializeField]
     Sprite[] directionIcons;
+
+    private int randomFake;
+
+    [SerializeField]
+    bool _canFake;
+
     public BossState BState { get; private set; }
 
     
@@ -258,9 +264,38 @@ public class BossController : MonoBehaviour
                 _spriteRenderer.sprite = spritesAttack[2];
                 DirectionIconChange(2, Color.white);
                 break;
+        }
+
+
+        if (_canFake)//BURASI 2 BOSS'A ÖZEL
+        {
+            randomFake = (int)Random.Range(0,2);
+
+            if(randomFake == 1)
+            {
+                switch (attackPosition)
+                {
+                    case 0:
+                        _spriteRenderer.sprite = spritesAttack[3];
+                        DirectionIconChange(0, Color.red);
+                        break;
+
+                    case 1:
+                        _spriteRenderer.sprite = spritesAttack[4];
+                        DirectionIconChange(1, Color.red);
+                        break;
+
+                    case 2:
+                        _spriteRenderer.sprite = spritesAttack[5];
+                        DirectionIconChange(2, Color.red);
+                        break;
+                }
+            }
+
 
 
         }
+
         Debug.Log("AttackPOS = " + attackPosition);
         _timer = 0;
 
@@ -286,7 +321,7 @@ public class BossController : MonoBehaviour
 
     public void Attack(int pos)
     {
-        if(attackPosition == pos)
+        if(attackPosition == pos && !_canFake || _canFake && attackPosition != pos && randomFake == 1 || _canFake && attackPosition == pos && randomFake == 0)
         {
             Debug.Log("Player Boss'u Blockladý");
             //Player Blocked The Boss Attack
@@ -295,7 +330,7 @@ public class BossController : MonoBehaviour
             _timer = 0;
 
         }
-        else
+        else if(attackPosition != pos && !_canFake || _canFake && attackPosition == pos && randomFake == 1 || _canFake && attackPosition != pos && randomFake == 0)
         {
             _isAttackWaiting = false;
             Debug.Log("Player Öldü");
