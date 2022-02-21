@@ -118,7 +118,16 @@ public class EnemyController : MonoBehaviour
             var cut = Instantiate(_cutPrefab, _player.transform.position, Quaternion.identity);
             var destroyCut = 0.6f;
             Destroy(cut, destroyCut);
-            yield return new WaitForSeconds(destroyCut);
+            yield return new WaitForSeconds(destroyCut/2f);
+            
+            foreach (var enemy in _enemyBehaviours)
+            {
+                if (!enemy.IsDead)
+                {
+                    enemy.EnemyOut();
+                }
+            }
+            yield return new WaitForSeconds(destroyCut/2f);
             
             GameManager.Instance.ChangeState(GameManager.GameState.Lose);
         }

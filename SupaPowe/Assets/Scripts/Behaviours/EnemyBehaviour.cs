@@ -76,6 +76,11 @@ public class EnemyBehaviour : MonoBehaviour
         Vector3 movePos = transform.position + dir * 3f;
         
         transform.DOMove(movePos, 5f).SetEase(Ease.OutSine);
+        EnemyOut();
+    }
+
+    public void EnemyOut()
+    {
         _spriteRenderer.DOFade(0, 5.5f).SetEase(Ease.OutSine);;
     }
 }
