@@ -67,6 +67,7 @@ public class SoundController : PersistentSingleton<SoundController>
         {
             windCountdown = UnityEngine.Random.Range(9, 15);
             windTimer = 0;
+            _windPlayer.DOKill();
             _windPlayer.DOFade(0,2);
             DOVirtual.DelayedCall(2.5f, () => _windPlayer.DOFade(1,2f));
         }
