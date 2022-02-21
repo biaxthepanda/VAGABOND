@@ -29,6 +29,10 @@ public class BossController : MonoBehaviour
 
     public SpriteRenderer behaviourIconRenderer;
 
+    [SerializeField]
+    SpriteRenderer directionRenderer;
+    [SerializeField]
+    Sprite[] directionIcons;
     public BossState BState { get; private set; }
 
     
@@ -112,6 +116,7 @@ public class BossController : MonoBehaviour
             case BossState.Attack:
                 behaviourIconRenderer.sprite = null;
                 _spriteRenderer.sprite = idleDeath[0];
+                directionRenderer.sprite = null;
                 _isAttackWaiting = false;
                 ChangeBossState(BossState.PrepareDefend);
                 _timer = 0;
@@ -128,6 +133,7 @@ public class BossController : MonoBehaviour
             case BossState.Defend:
                 behaviourIconRenderer.sprite = null;
                 _spriteRenderer.sprite = idleDeath[0];
+                directionRenderer.sprite = null;
                 _isDefendWaiting = false;
                 ChangeBossState(BossState.PrepareAttack);
                 _timer = 0;
@@ -147,14 +153,17 @@ public class BossController : MonoBehaviour
         {
             case 0:
                 _spriteRenderer.sprite = spritesDef[0];
+                DirectionIconChange(0, Color.red);
                 break;
 
             case 1:
                 _spriteRenderer.sprite = spritesDef[1];
+                DirectionIconChange(1, Color.red);
                 break;
 
             case 2:
                 _spriteRenderer.sprite = spritesDef[2];
+                DirectionIconChange(2, Color.red);
                 break;
 
 
@@ -162,6 +171,8 @@ public class BossController : MonoBehaviour
         Debug.Log("DefendPOS = " +defendPosition);
         _timer = 0;
     }
+
+
 
     public void Block(int pos)
     {
@@ -231,14 +242,17 @@ public class BossController : MonoBehaviour
         {
             case 0:
                 _spriteRenderer.sprite = spritesAttack[0];
+                DirectionIconChange(0,Color.white);
                 break;
 
             case 1:
                 _spriteRenderer.sprite = spritesAttack[1];
+                DirectionIconChange(1, Color.white);
                 break;
 
             case 2:
                 _spriteRenderer.sprite = spritesAttack[2];
+                DirectionIconChange(2, Color.white);
                 break;
 
 
@@ -290,5 +304,9 @@ public class BossController : MonoBehaviour
     }
 
 
-
+    void DirectionIconChange(int i,Color color)
+    {
+        directionRenderer.sprite = directionIcons[i];
+        directionRenderer.color = color;
+    }
 }
