@@ -52,7 +52,7 @@ public class LineManager : MonoBehaviour
             drawnLine = 0;
             distanceTraveled = 0;
         }
-        else if (state == GameManager.GameState.Act || state == GameManager.GameState.Idle)
+        else if (state == GameManager.GameState.Act || state == GameManager.GameState.Idle || state == GameManager.GameState.Lose || state == GameManager.GameState.Win)
         {
             transform.DestroyChildren();
         }

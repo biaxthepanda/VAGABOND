@@ -1894,7 +1894,7 @@ PrefabInstance:
     - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: _effects.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: ec808093de554e245b7ecd944d5bcd8b, type: 3}
     - target: {fileID: 5106787802553171015, guid: fe3ad94f81c5a6245a26e4cb7fcd5ca8, type: 3}
       propertyPath: _effects.Array.data[4]
       value: 

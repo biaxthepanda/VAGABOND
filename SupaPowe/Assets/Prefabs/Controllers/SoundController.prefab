@@ -758,16 +758,21 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 80c07eb6c28f78b459a38a72ff6c381a, type: 3}
   - {fileID: 8300000, guid: a9f065a2917c7bd4b997735cc967f72c, type: 3}
   - {fileID: 8300000, guid: 7c13aa83c5ee2894ba343d66ea8247cf, type: 3}
-  - {fileID: 0}
-  - {fileID: 8300000, guid: 8230af7e703b96842bc61656707a07ab, type: 3}
-  - {fileID: 8300000, guid: 303566fe58f86cb4b82cc60b97c5c9de, type: 3}
   - {fileID: 8300000, guid: ec808093de554e245b7ecd944d5bcd8b, type: 3}
+  - {fileID: 8300000, guid: 303566fe58f86cb4b82cc60b97c5c9de, type: 3}
+  - {fileID: 8300000, guid: 8230af7e703b96842bc61656707a07ab, type: 3}
   _effectPlayer: {fileID: 4686335529959855953}
   _walkSounds:
   - {fileID: 8300000, guid: 77b83b3e5645391488b95321fd48b40a, type: 3}
   - {fileID: 8300000, guid: ac7c018506ae6b14293f2a5933527619, type: 3}
   - {fileID: 8300000, guid: 2c64c8565a8f4fc47ae9e358c18228fb, type: 3}
   - {fileID: 8300000, guid: cb12251e2802cf24389a694b02a0c7df, type: 3}
-  - {fileID: 8300000, guid: ceb73c525e512b24fade78aecd981c95, type: 3}
-  _clashSounds: []
+  _clashSounds:
+  - {fileID: 8300000, guid: e7617eb85456a5c4bba9ed383b887558, type: 3}
+  - {fileID: 8300000, guid: b8af866fec735f24094f6d69fcc83651, type: 3}
+  - {fileID: 8300000, guid: 190b7373f1d096c459bd24df73c76f9a, type: 3}
+  - {fileID: 8300000, guid: 0eef035b6509d64499cc3e84aa501160, type: 3}
   _walkPlayer: {fileID: 2608541189930005018}
+  _windPlayer: {fileID: 0}
+  windTimer: 0
+  windCountdown: 5
