@@ -1489,7 +1489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1952371976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1924,41 +1924,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 261089390670466156, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1320375563308647285, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1471276760426825300, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2064315727}
-    - target: {fileID: 1717481255119880184, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722064502569812157, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342513472032496291, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2746076699380925212, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2859753202426017125, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2859753202426017125, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2950985548935979724, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1971,10 +1947,6 @@ PrefabInstance:
     - target: {fileID: 4091361935518714810, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
       propertyPath: m_Name
       value: Canvases
-      objectReference: {fileID: 0}
-    - target: {fileID: 4091361935518714810, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4091361935518714821, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
       propertyPath: m_RootOrder
@@ -2020,39 +1992,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6756162574102526434, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7126825525373795755, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289824099076015322, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7340316758168621843, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578325823541705662, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7907439205386388850, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7918156646143248239, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8594001961694112838, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9156488912865399654, guid: 3ba1c4c6d0c196941af72c913c8e19a6, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
