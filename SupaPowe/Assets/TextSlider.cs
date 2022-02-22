@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -23,7 +21,7 @@ public class TextSlider : MonoBehaviour
         _transform.DOMove(_target.position, _duration).OnComplete((() =>
         {
             _audioSource.DOFade(0, 3);
-            _transform.GetComponent<TextMeshProUGUI>().DOFade(0, 3).OnComplete((() =>
+            _transform.GetComponent<TextMeshProUGUI>().DOFade(0, 5).OnComplete((() =>
             {
                 SceneManager.LoadScene("Main");
             }));
